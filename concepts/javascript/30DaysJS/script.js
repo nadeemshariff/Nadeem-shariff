@@ -58,6 +58,7 @@ console.log(`Value: ${nullVar}, Type: ${typeof nullVar}`);
 
 
 
+
 //Achievement: By the end these, You will:
 //Know how to declare variables suing var, let and const.
 // Understand the different data types in Javascript.
@@ -632,3 +633,4 @@ console.log(`Value: ${nullVar}, Type: ${typeof nullVar}`);
 
 //---------------------------------------------------------------------
 
+//
