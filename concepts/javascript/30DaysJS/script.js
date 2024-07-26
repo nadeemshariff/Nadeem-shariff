@@ -33,22 +33,22 @@
 // console.log(name2);
 
 // Declare variables of different data types
-let numberVar = 10;
-let stringVar = "Hello, world!";
-let booleanVar = true;
-let objectVar = { key: "value" };
-let arrayVar = [1, 2, 3];
-let undefinedVar;
-let nullVar = null;
+// let numberVar = 10;
+// let stringVar = "Hello, world!";
+// let booleanVar = true;
+// let objectVar = { key: "value" };
+// let arrayVar = [1, 2, 3];
+// let undefinedVar;
+// let nullVar = null;
 
 // Log both the value and type of each variable to the console
-console.log(`Value: ${numberVar}, Type: ${typeof numberVar}`);
-console.log(`Value: ${stringVar}, Type: ${typeof stringVar}`);
-console.log(`Value: ${booleanVar}, Type: ${typeof booleanVar}`);
-console.log(`Value: ${objectVar}, Type: ${typeof objectVar}`);
-console.log(`Value: ${arrayVar}, Type: ${typeof arrayVar}`);
-console.log(`Value: ${undefinedVar}, Type: ${typeof undefinedVar}`);
-console.log(`Value: ${nullVar}, Type: ${typeof nullVar}`);
+// console.log(`Value: ${numberVar}, Type: ${typeof numberVar}`);
+// console.log(`Value: ${stringVar}, Type: ${typeof stringVar}`);
+// console.log(`Value: ${booleanVar}, Type: ${typeof booleanVar}`);
+// console.log(`Value: ${objectVar}, Type: ${typeof objectVar}`);
+// console.log(`Value: ${arrayVar}, Type: ${typeof arrayVar}`);
+// console.log(`Value: ${undefinedVar}, Type: ${typeof undefinedVar}`);
+// console.log(`Value: ${nullVar}, Type: ${typeof nullVar}`);
 
 
 // Featured request  
@@ -70,37 +70,111 @@ console.log(`Value: ${nullVar}, Type: ${typeof nullVar}`);
 //----------------------Day 2 (Operators)--------------------------
 // Activity 1: Arithmetic Operations
 // Task 1: Write a program to add two numbers and log the result to the console.
-//task2: write a subtract two numbers and log the result to the console.
-//task 3:write a program to divide two numbers and log the result to the console
-//Task 4: write a program to multiply two numbers and log the result to the console.
-// Task 5: write a program to find the remainder when one number is divided by another and log the result to the console 
+// let num1 = 5;
+// let num2 = 10;
+// console.log(num1 + num2);
+
+// //task2: write a subtract two numbers and log the result to the console.
+// let num3 = 10;
+// let num4 = 5;
+// console.log(num3 - num4);
+
+// //task 3:write a program to divide two numbers and log the result to the console
+// let num5 = 10;
+// let num6 = 2;
+// console.log(num5 / num6);
+
+// //Task 4: write a program to multiply two numbers and log the result to the console.
+// let num7 = 10;
+// let num8 = 5;
+// console.log(num7 * num8);
+
+// // Task 5: write a program to find the remainder when one number is divided by another and log the result to the console 
+// let num9 = 10;
+// let num10 = 3;
+// console.log(num9 % num10);
 
 // Activity 2: Assignment Operators
 
 // Task 6: Use the = operator to add a number to a variable and log the result to the console.
+// let num = 10
+// num = num + 5
+// console.log(num)
+
 // Task 7: Use the -= operator to subtract a number from a variable and log the result to the console.
+// let value = 20
+// value -= 7
+// console.log(value)
 
 // Activity 3: Comparison Operators
 
 // Task 8: Write a program to compare two numbers using < and log the result to the console.
-// Task 9: Write a program to compare two numbers using > and log the result to the console.
-// Task 10: Write a program to compare two numbers using == and log the result to the console.
 
-// Activity 4: Logical Operators
+// const v1 = 55;
+// const v2 = 10;
+// console.log(v1 < v2);
+
+// Task 9: Write a program to compare two numbers using > and log the result to the console.
+// const v3 = 55;
+// const v4 = 10;
+// console.log(v3 > v4);
+
+// Task 10: Write a program to compare two numbers using == and log the result to the console.
+// const v5 = 55;
+// const v6 = '55';
+// console.log(v5 == v6);
 
 // Task 11: Write a program that uses the && operator to combine two conditions and log the result to the console.
+// const a = 5;
+// const b = 10;
+// console.log(a > 0 && b > 0);
+
 // Task 12: Write a program that uses the || operator to combine two conditions and log the result to the console.
+// const c = 0;
+// const d = -10;
+// console.log(c > 0 || d > 0);
+
 // Task 13: Write a program that uses the ! operator to negate a condition and log the result to the console.
+// const e = true;
+// console.log(!e);
 
 // Activity 5: Ternary Operator
 
 // Task 14: Write a program that uses the ternary operator to check if a number is positive or negative and log the result to the console.
+// Define a variable named 'number' and assign it the value 5
+
+// const number = 5;
+
+// Use the ternary operator to check if the value of 'number' is greater than or equal to 0
+// If it is, log "Positive" to the console
+// If it is not, log "Negative" to the console
+
+// console.log(number >= 0 ? "Positive" : "Negative");
 
 // Feature Request:
 
 // Arithmetic Operations Script: Write a script that performs basic arithmetic operations (addition, subtraction, multiplication, division, remainder) on two numbers and logs the results.
+
+// const num1 = 5;
+// const num2 = 10;
+
+// console.log(`Addition: ${num1 + num2}`);
+// console.log(`Subtraction: ${num1 - num2}`);
+// console.log(`Multiplication: ${num1 * num2}`);
+// console.log(`Division: ${num1 / num2}`);
+// console.log(`Remainder: ${num1 % num2}`);
+
 // Comparison and Logical Operators Script: Create a script that compares two numbers using different comparison operators and combines conditions using logical operators, logging the results.
+
+// const num3 = 5;
+// const num4 = 10;
+// console.log(`Greater than: ${num3 > num4}`);
 // Ternary Operator Script: Write a script that uses the ternary operator to determine if a number is positive or negative and logs the result.
+
+// const num5 = 88;
+
+// console.log(num5 >= 0 ? "Positive" : "Negative");
+
 // Achievement:
 
 // By the end of these activities, students will:
@@ -633,4 +707,42 @@ console.log(`Value: ${nullVar}, Type: ${typeof nullVar}`);
 
 //---------------------------------------------------------------------
 
-//
+// ------------------Day 14 ------------------------------------------
+// Tasks and Activities
+
+// Activity 1: Class Definition
+
+// Task 1: Define a class Person with properties name and age, and a method to return a greeting message. Create an instance of the class and log the greeting message.
+// Task 2: Add a method to the Person class that updates the age property and logs the updated age.
+// Activity 2: Class Inheritance
+
+// Task 3: Define a class Student that extends the Person class. Add a property studentid and a method to return the student ID, Create an instance of the Student class and log the student ID.
+// Task 4: Override the greeting method in the Student class to include the student ID in the message. Log the overridden greeting message.
+// Activity 3: Static Methods and Properties
+
+// Task 5: Add a static method to the Person class that returns a generic greeting message. Call this static method without creating an instance of the class and log the message.
+// Task 6: Add a static property to the Student class to keep track of the number of students created. Increment this property in the constructor and log the total number of students.
+// Activity 4: Getters and Setters
+
+// Task 7: Add a getter method to the Person class to return the full name (assume a firstfiame and lastriame property). Create an instance and log the full name using the getter.
+// Task 8: Add a setter method to the Person class to update the name properties (firstllame and lastName). Update the name using the setter and log the updated full name.
+// Activity 5: Private Fields (Optional)
+
+// Task 9: Define a class Account with private fields for balance and a method to deposit and withdraw money. Ensure that the balance can only be updated through these methods.
+// Task 10: Create an instance of the Account class and test the deposit and withdraw methods, logging the balance after each operation.
+// Feature Request:
+
+// Basic Class Script: Write a script that defines a Person class with properties and methods, creates instances, and logs messages.
+// Class Inheritance Script: Create a script that defines a Student class extending Person, overrides methods, and logs the results.
+// Static Methods and Properties Script: Write a script that demonstrates static methods and properties in classes.
+// Getters and Setters Script: Create a script that uses getters and setters in a class.
+// Private Fields Script: Write a script that defines a class with private fields and methods to manipulate these fields (optional).
+// Achievement:
+
+// By the end of these activities, students will:
+
+// Define and use classes with properties and methods.
+// Implement inheritance to extend classes.
+// Utilize static methods and properties.
+// Apply getters and setters for encapsulation.
+// Understand and use private fields in classes (optional).
