@@ -189,24 +189,140 @@
 // Control Structures
 // Tasks/Activiytes
 // Activity 1: if else Statements
+
+
 // Task 1:Write a program to check if a number is positive, negative, or zero, and log the result to the console.
+const num = 5;
+
+if (num > 0) {
+    console.log("Positive");
+} else if (num < 0) {
+    console.log("Negative");
+} else {
+    console.log("Zero");
+}
+
+console.log(num >= 0 ? "Positive" : "negative");
+
+
 // Task 2: Write a program to check if a person is eligible to vote (age >= 18) and log the result to the console
 
-// Activity2:Nesteed If-else Statements
+const person = "nadeem";
+const age = 25;
+
+if (age >= 18) {
+    console.log(`${person} is eligible to vote`);
+} else {
+    console.log(`${person} is not eligible to vote`);
+}
+
+
+
+
+// Activity2:Nested If-else Statements
+
+
 // Task3: Write a program to find the large of three numbers using nested if-else statements.
+const n1 = 55;
+const n2 = 10;
+const n3 = 20;
+if (n1 > n2 && n1 > n3) {
+    console.log(`${n1} is the largest`);
+} else if (n2 > n1 && n2 > n3) {
+    console.log(`${n2} is the largest`);
+} else if (n3 > n1 && n3 > n2) {
+    console.log(`${n3} is the largest`);
+}
+
+console.log(n1 >= n2 >= n3 ? "largest" : "Smallest");
+
 
 // Activity 3: Switch Case
+
+
 // Task 4: Write a program that uses a switch case to determine the day of the week based on a number(1-7) and log the day name to the console.
+
+
+const day = 3;
+switch (day) {
+    case 1:
+        console.log("Monday");
+        break;
+    case 2:
+        console.log("Tuesday");
+        break;
+    case 3:
+        console.log("Wednesday");
+        break;
+    case 4:
+        console.log("Thursday");
+        break;
+    case 5:
+        console.log("Friday");
+        break;
+    case 6:
+        console.log("Saturday");
+        break;
+    case 7:
+        console.log("Sunday");
+        break;
+    default:
+        console.log("Invalid day");
+}
+
 // Task5:Write a program that uses a switch case to assign a grade('A','B','C','D','F') based on a score and log the grade to the console.
 
+
+const score = 80;
+switch (true) {
+    case score >= 90:
+        console.log("A");
+        break;
+    case score >= 80:
+        console.log("B");
+        break;
+    case score >= 70:
+        console.log("C");
+        break;
+    case score >= 60:
+        console.log("D");
+        break;
+    default:
+        console.log("F");
+}
+
+
+
+
 // Activity 4: Conditional Operator
+
+
 // Task 6: Write a program that uses the ternary operator to check if a number is even or odd and log the result to the console.
+const r = 45;
+console.log(r % 2 === 0 ? "Even" : "Odd");
+
 
 // Activity 5: Combining Conditions
-// Task 7: Write a program to check a year is a leap year using multiple conditions (Divisible by 4, but not 100 unless also divisible by 400) and log the reuslt to the console.
+
+
+// Task 7: Write a program to check a year is a leap year using multiple conditions (Divisible by 4, but not 100 unless also divisible by 400) and log the result to the console.
+
+
+const year = 2025;
+console.log(year % 4 === 0 && year % 100 !== 0 || year % 400 === 0 ? "Leap Year" : "Not Leap Year");
+
 
 // Featured Request:
 // 1.Number Check Script: Write a script that checks if a number is positive, negative, or zero using if-else statements and logs the result.
+
+const var1 = 15;
+const var2 = 25;
+
+const result = (var1 - var2);
+
+console.log(result > 0 ? "Positive" : "Negative");
+
+
 // Voting Eligibility Script: Create a script to check if a person is eligible to vote based on their age and log the result.
 // Day of the Week Script: Write a script that uses a switch case to determine the day of the week based on a number (1-7) and logs the day name.
 // Grade Assignment Script: Create a script that uses a switch case to assign a grade based on a score and logs the grade.
@@ -227,17 +343,51 @@
 // Activity 1: For Loop
 // Task 1: Write a program to print numbers from 1 to 10 using a for loop and log the numbers to the console.
 
+
+const numbers = Array.from({ length: 10 }, (_, i) => i + 1);
+
+console.log(numbers);
+
 // Activity 2: While Loop
 // Task 2: Write a program to print numbers from 10 to 1 using a while loop and log the numbers to the console.
+
+
+const numbers2 = Array.from({ length: 10 }, (_, i) => 10 - i);
+console.log(numbers2);
 
 // Activity 3: Do-While Loop
 // Task 3: Write a program to print numbers from 1 to 10 using a do-while loop and log the numbers to the console.  
 
+
+const numbers3 = Array.from({ length: 10 }, (_, i) => i + 1);
+console.log(numbers3);
+
 // Activity 4: For-In Loop
 // Task 4: Write a program to print the properties of an object using a for-in loop and log the properties to the console.
 
+
+const obj = {
+    name: "Nadeem",
+    age: 21
+}
+for (const key in obj) {
+    console.log(key, obj[key]);
+}
+
+console.log(obj);
+
 // Activity 5: For-Of Loop
 // Task 5: Write a program to print the elements of an array using a for-of loop and log the elements to the console.
+
+
+const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+for (const element of arr) {
+    console.log(element);
+}
+
+console.log(arr);
+
+
 
 // Activity 6: For-Each Loop
 // Task 6: Write a program to print the elements of an array using a for-each loop and log the elements to the console.
