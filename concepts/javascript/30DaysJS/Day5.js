@@ -129,6 +129,27 @@ function factorial(numb) {
 
 // Task 9: Write a function to check if a string is a palindrome or not and return the result.
 
+function isPalindrome(str) {
+  // Convert the string to lowercase and remove non-alphanumeric characters
+  const cleanStr = str.toLowerCase().replace(/[^a-z0-9]/g, '');
+  
+  // Compare the cleaned string with its reverse
+  return cleanStr === cleanStr.split('').reverse().join('');
+}
+
+console.log(isPalindrome("racecar")); // Output: true
+console.log(isPalindrome("A man, a plan, a canal: Panama")); // Output: true
+console.log(isPalindrome("hello")); // Output: false
+
+// Explanation:
+// 1. The function 'isPalindrome' takes a string as input.
+// 2. It first cleans the string by converting it to lowercase and removing non-alphanumeric characters.
+// 3. Then it compares the cleaned string with its reverse:
+//    - split('') converts the string to an array of characters
+//    - reverse() reverses the order of the array elements
+//    - join('') converts the array back to a string
+// 4. If the cleaned string is equal to its reverse, it's a palindrome, so the function returns true. Otherwise, it returns false.
+// 5. The console.log statements demonstrate the function with different inputs.
 
 // Task 10: Write a function to calculate the sum of all the numbers in an array and return the result.
 
