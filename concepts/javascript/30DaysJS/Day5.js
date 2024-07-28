@@ -153,6 +153,14 @@ console.log(isPalindrome("hello")); // Output: false
 
 // Task 10: Write a function to calculate the sum of all the numbers in an array and return the result.
 
+const arr1 = [1,55,25,554];
+function sumOfArr(arr1){
+    return arr1.reduce((acc,curr) => acc + curr, 0);
+
+}
+
+console.log(sumOfArr(arr1));
+
 
 //Activity 2: Function Expressions
 
