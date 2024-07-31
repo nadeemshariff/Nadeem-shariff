@@ -1,3 +1,4 @@
 {
-    "livePreview.defaultPreviewPath": "/concepts/javascript/TM JS/object-spread/index.html"
+    "livePreview.defaultPreviewPath": "/concepts/javascript/TM JS/object-spread/index.html",
+    "todo-tree.tree.showBadges": false
 }
