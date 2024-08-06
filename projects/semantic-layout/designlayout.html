@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi-Design Preview</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        header, footer {
+            background-color: #f0f0f0;
+            padding: 1rem;
+            text-align: center;
+        }
+        main {
+            display: flex;
+            flex: 1;
+        }
+        nav {
+            background-color: #e0e0ff;
+            padding: 1rem;
+            width: 200px;
+        }
+        .content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        section {
+            padding: 1rem;
+        }
+        section:first-child {
+            background-color: #e0ffff;
+            flex: 2;
+        }
+        section:last-child {
+            background-color: #f0f0f0;
+            flex: 1;
+        }
+        aside {
+            background-color: #ffe0e0;
+            padding: 1rem;
+            width: 200px;
+        }
+        button {
+            margin: 5px;
+            padding: 5px 10px;
+        }
+        #designSelector {
+            margin: 10px;
+            padding: 5px;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 id="siteTitle">Multi-Design Preview</h1>
+        <select id="designSelector">
+            <option value="news">News Portal</option>
+            <option value="ecommerce">E-commerce Site</option>
+            <option value="portfolio">Portfolio Website</option>
+            <option value="recipe">Recipe Blog</option>
+            <option value="education">Educational Platform</option>
+            <option value="social">Social Media Dashboard</option>
+            <option value="travel">Travel Blog</option>
+            <option value="tech">Tech Review Site</option>
+            <option value="fitness">Fitness Tracker</option>
+            <option value="music">Music Streaming Service</option>
+        </select>
+    </header>
+    <main>
+        <nav id="navContent">
+            <h2>Navigation</h2>
+            <ul id="navList"></ul>
+        </nav>
+        <div class="content">
+            <section id="mainContent">
+                <h2>Main Content</h2>
+                <p id="mainText"></p>
+            </section>
+            <section id="bottomContent">
+                <h2>Additional Content</h2>
+                <p id="bottomText"></p>
+            </section>
+        </div>
+        <aside id="asideContent">
+            <h2>Sidebar</h2>
+            <p id="asideText"></p>
+        </aside>
+    </main>
+    <footer>
+        <p>Footer - © 2024 Multi-Design Preview</p>
+    </footer>
+
+    <script>
+        const designs = {
+            news: {
+                title: "Daily News",
+                nav: ["World", "Politics", "Technology", "Sports"],
+                main: "Breaking News: Major scientific breakthrough announced!",
+                aside: "Trending Stories",
+                bottom: "Weather Updates"
+            },
+            ecommerce: {
+                title: "Shop All",
+                nav: ["Electronics", "Clothing", "Home", "Books"],
+                main: "Featured Product: Latest Smartphone",
+                aside: "Your Cart (3 items)",
+                bottom: "Recommended for You"
+            },
+            portfolio: {
+                title: "Jane Doe - Designer",
+                nav: ["Web Design", "Graphic Design", "UI/UX", "Branding"],
+                main: "Featured Project: E-commerce Website Redesign",
+                aside: "Contact Information",
+                bottom: "Client Testimonials"
+            },
+            recipe: {
+                title: "Culinary Delights",
+                nav: ["Italian", "Mexican", "Chinese", "Indian"],
+                main: "Recipe of the Day: Spaghetti Carbonara",
+                aside: "Ingredients List",
+                bottom: "Related Recipes"
+            },
+            education: {
+                title: "Learn Today",
+                nav: ["Mathematics", "Science", "History", "Languages"],
+                main: "Current Lesson: Introduction to Algebra",
+                aside: "Your Progress",
+                bottom: "Additional Resources"
+            },
+            social: {
+                title: "ConnectHub",
+                nav: ["Home", "Messages", "Notifications", "Profile"],
+                main: "Your Feed",
+                aside: "Trending Topics",
+                bottom: "Suggested Connections"
+            },
+            travel: {
+                title: "Wanderlust Adventures",
+                nav: ["Europe", "Asia", "Africa", "Americas"],
+                main: "Destination Spotlight: Paris, France",
+                aside: "Travel Tips",
+                bottom: "Photo Gallery"
+            },
+            tech: {
+                title: "TechCrunch",
+                nav: ["Smartphones", "Laptops", "Gadgets", "Apps"],
+                main: "Review: Latest Flagship Smartphone",
+                aside: "Specs Comparison",
+                bottom: "User Comments"
+            },
+            fitness: {
+                title: "FitTrack",
+                nav: ["Workouts", "Nutrition", "Progress", "Community"],
+                main: "Today's Workout Plan",
+                aside: "Your Stats",
+                bottom: "Nutrition Tips"
+            },
+            music: {
+                title: "MelodyStream",
+                nav: ["Discover", "Radio", "Playlists", "Library"],
+                main: "Now Playing: Top Hits Playlist",
+                aside: "Recommended Tracks",
+                bottom: "Artist Spotlight"
+            }
+        };
+
+        function updateDesign(design) {
+            const currentDesign = designs[design];
+            document.getElementById('siteTitle').textContent = currentDesign.title;
+            document.getElementById('navList').innerHTML = currentDesign.nav.map(item => `<li>${item}</li>`).join('');
+            document.getElementById('mainText').textContent = currentDesign.main;
+            document.getElementById('asideText').textContent = currentDesign.aside;
+            document.getElementById('bottomText').textContent = currentDesign.bottom;
+        }
+
+        document.getElementById('designSelector').addEventListener('change', (e) => {
+            updateDesign(e.target.value);
+        });
+
+        // Initialize with the first design
+        updateDesign('news');
+    </script>
+</body>
+</html>

@@ -4,11 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather application</title>
-    <<meta name="description" content="Its is a weather app made by Nadeem shariff">
+    <meta name="description" content="Its is a weather app made by Nadeem shariff">
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- <link href="https://cdn.tailwindcss.com" rel="stylesheet"> -->
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+
+    <!-- FontAwsome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- google font link -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,11 +20,28 @@
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <!-- custom css link -->
-    <link rel="stylesheet" href="./assets/css/style.css">
+    <!-- <link rel="stylesheet" href="./assets/css/style.css"> -->
 
 
 </head>
 <body>
+
+    <div class="body bg-black  ">
+
+        <div class="container">
+            <div class="weather-header">
+                <h1 class="flex items-center text-white">Weather App</h1>
+                
+                <form class="search">
+                    <input type="text" class="search-bar" placeholder="Search your city...">
+                    <button type="button" title="Search"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </form>  
+                
+            </div>
+        </div>
+    </div>
+     
+
     
 
 </body>

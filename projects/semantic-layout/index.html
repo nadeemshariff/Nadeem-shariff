@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toggleable Layout</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        header, footer {
+            background-color: #f0f0f0;
+            padding: 1rem;
+            text-align: center;
+        }
+        main {
+            display: flex;
+            flex: 1;
+        }
+        nav {
+            background-color: #e0e0ff;
+            padding: 1rem;
+            width: 200px;
+        }
+        .content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        section {
+            padding: 1rem;
+        }
+        section:first-child {
+            background-color: #e0ffff;
+            flex: 2;
+        }
+        section:last-child {
+            background-color: #f0f0f0;
+            flex: 1;
+        }
+        aside {
+            background-color: #ffe0e0;
+            padding: 1rem;
+            width: 200px;
+        }
+        button {
+            margin: 5px;
+            padding: 5px 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Header</h1>
+        <div>
+            <button onclick="toggleElement('nav')">Toggle Nav</button>
+            <button onclick="toggleElement('aside')">Toggle Aside</button>
+            <button onclick="toggleElement('section:last-child')">Toggle Bottom Section</button>
+        </div>
+    </header>
+    <main>
+        <nav>
+            <h2>Nav</h2>
+            <ul>
+                <li><a href="#" onclick="redirect('nav')">Link 1</a></li>
+                <li><a href="#" onclick="redirect('nav')">Link 2</a></li>
+                <li><a href="#" onclick="redirect('nav')">Link 3</a></li>
+            </ul>
+        </nav>
+        <div class="content">
+            <section>
+                <h2>Article</h2>
+                <p>Main content goes here.</p>
+            </section>
+            <section>
+                <h2>Section</h2>
+                <p>Additional content goes here.</p>
+            </section>
+        </div>
+        <aside>
+            <h2>Aside</h2>
+            <p>Sidebar content goes here.</p>
+        </aside>
+    </main>
+    <footer>
+        <p>Footer</p>
+    </footer>
+
+    <script>
+        function toggleElement(selector) {
+            const element = document.querySelector(selector);
+            if (element) {
+                element.style.display = element.style.display === 'none' ? '' : 'none';
+            }
+        }
+
+        function redirect(from) {
+            alert(`Redirecting from ${from}`);
+            // Implement actual redirection logic here
+        }
+    </script>
+</body>
+</html>
