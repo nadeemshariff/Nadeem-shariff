@@ -3,46 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather application</title>
-    <meta name="description" content="Its is a weather app made by Nadeem shariff">
+    <title>Weather App</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- <link href="https://cdn.tailwindcss.com" rel="stylesheet"> -->
-
-    <!-- Favicon -->
-    <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
-
-    <!-- FontAwsome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-    <!-- google font link -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-    <!-- custom css link -->
-    <!-- <link rel="stylesheet" href="./assets/css/style.css"> -->
-
-
 </head>
-<body>
-
-    <div class="body bg-black  ">
-
-        <div class="container">
-            <div class="weather-header">
-                <h1 class="flex items-center text-white">Weather App</h1>
-                
-                <form class="search">
-                    <input type="text" class="search-bar" placeholder="Search your city...">
-                    <button type="button" title="Search"><i class="fa-solid fa-magnifying-glass"></i></button>
-                </form>  
-                
-            </div>
+<body class="bg-gradient-to-r from-blue-400 to-blue-600 min-h-screen flex items-center justify-center">
+    <div class="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
+        <h1 class="text-3xl font-bold mb-6 text-center text-blue-600">Weather App</h1>
+        <div class="flex mb-4">
+            <input type="text" id="cityInput" placeholder="Enter city name" 
+                   class="flex-grow p-2 border border-gray-300 rounded-l-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+            <button id="searchButton" 
+                    class="bg-blue-500 text-white px-4 py-2 rounded-r-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                Search
+            </button>
         </div>
+        <div id="weatherInfo" class="text-center"></div>
     </div>
-     
 
-    
+    <script>
+        // Your JavaScript code here
+        function displayWeather(data) {
+    const { name, main, weather } = data;
+    weatherInfo.innerHTML = `
+        <h2 class="text-2xl font-bold mb-2">${name}</h2>
+        <p class="text-4xl font-bold mb-4">${Math.round(main.temp)}°C</p>
+        <p class="mb-2">Humidity: ${main.humidity}%</p>
+        <p class="mb-4">${weather[0].description}</p>
+        <img src="http://openweathermap.org/img/w/${weather[0].icon}.png" alt="Weather icon" class="mx-auto">
+    `;
+}
 
+        
+    </script>
 </body>
 </html>
