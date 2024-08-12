@@ -30,47 +30,70 @@
     <button id="redoBtn">Redo</button>
 
     <script>
+        // Get references to the container, undo button, redo button, and dots array
         const container = document.getElementById('container');
         const undoBtn = document.getElementById('undoBtn');
         const redoBtn = document.getElementById('redoBtn');
-
         let dots = [];
         let removedDots = [];
 
+        // Add a click event listener to the container
         container.addEventListener('click', (e) => {
+            // Create a new dot element
             const dot = document.createElement('div');
+            // Set the class and position of the dot
             dot.className = 'dot';
             dot.style.left = `${e.clientX - container.offsetLeft}px`;
             dot.style.top = `${e.clientY - container.offsetTop}px`;
+            // Append the dot to the container
             container.appendChild(dot);
+            // Add the dot to the dots array
             dots.push(dot);
+            // Clear the removed dots array
             removedDots = [];
+            // Update the buttons
             updateButtons();
         });
 
+        // Add a click event listener to the undo button
         undoBtn.addEventListener('click', () => {
+            // If there are dots in the array
             if (dots.length > 0) {
+                // Get the last dot from the array
                 const removedDot = dots.pop();
+                // Remove the dot from the container
                 container.removeChild(removedDot);
+                // Add the dot to the removed dots array
                 removedDots.push(removedDot);
+                // Update the buttons
                 updateButtons();
             }
         });
 
+        // Add a click event listener to the redo button
         redoBtn.addEventListener('click', () => {
+            // If there are removed dots in the array
             if (removedDots.length > 0) {
+                // Get the last dot from the array
                 const redoDot = removedDots.pop();
+                // Append the dot to the container
                 container.appendChild(redoDot);
+                // Add the dot to the dots array
                 dots.push(redoDot);
+                // Update the buttons
                 updateButtons();
             }
         });
 
+        // Function to update the buttons' disabled state
         function updateButtons() {
+            // Disable the undo button if there are no dots
             undoBtn.disabled = dots.length === 0;
+            // Disable the redo button if there are no removed dots
             redoBtn.disabled = removedDots.length === 0;
         }
 
+        // Initial call to update the buttons
         updateButtons();
     </script>
 </body>
