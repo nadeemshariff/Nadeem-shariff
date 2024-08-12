@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+<body>
+    <!--
+// v0 by Vercel.
+// https://v0.dev/t/AtXxHQflzyf
+-->
+
+<div class="flex flex-col min-h-[100dvh] bg-[#f5f5f5] text-[#333]">
+    <header class="fixed top-0 left-0 right-0 z-10 px-4 lg:px-6 h-14 flex items-center justify-between bg-[#f5f5f5] shadow-md">
+      <a class="flex items-center gap-2" href="#">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="h-6 w-6 text-[#e67e22]"
+        >
+          <path d="m9.06 11.9 8.07-8.06a2.85 2.85 0 1 1 4.03 4.03l-8.06 8.08"></path>
+          <path d="M7.07 14.94c-1.66 0-3 1.35-3 3.02 0 1.33-2.5 1.52-2 2.02 1.08 1.1 2.49 2.02 4 2.02 2.2 0 4-1.8 4-4.04a3.01 3.01 0 0 0-3-3.02z"></path>
+        </svg>
+        <span class="text-lg font-bold">Retro Design</span>
+      </a>
+      <nav class="flex gap-6 justify-center flex-1">
+        <a
+          class="text-sm font-medium relative before:absolute before:bottom-0 before:left-0 before:w-0 before:h-[2px] before:bg-[#e67e22] before:transition-all before:duration-300 hover:before:w-full"
+          href="#"
+        >
+          Featured Work
+        </a>
+        <a
+          class="text-sm font-medium relative before:absolute before:bottom-0 before:left-0 before:w-0 before:h-[2px] before:bg-[#e67e22] before:transition-all before:duration-300 hover:before:w-full"
+          href="#"
+        >
+          About
+        </a>
+        <a
+          href="#"
+          class="text-sm font-medium relative before:absolute before:bottom-0 before:left-0 before:w-0 before:h-[2px] before:bg-[#e67e22] before:transition-all before:duration-300 hover:before:w-full"
+        >
+          Testimonials
+        </a>
+        <a
+          href="#"
+          class="text-sm font-medium relative before:absolute before:bottom-0 before:left-0 before:w-0 before:h-[2px] before:bg-[#e67e22] before:transition-all before:duration-300 hover:before:w-full"
+        >
+          Contact
+        </a>
+
+        
+
+
+      </nav>
+    </header>
+    <main class="flex-1 mt-14">
+      <section class="w-full py-12 md:py-24 lg:py-32 bg-[#f5f5f5]">
+        <div class="container px-4 md:px-6 grid gap-6 lg:grid-cols-2 lg:gap-12">
+          <div class="flex flex-col justify-center space-y-4">
+            <div class="space-y-2">
+              <h1 class="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">Unleash Your Creativity</h1>
+              <p class="max-w-[600px] text-[#666]">
+                Discover a world of retro-inspired design excellence. Explore our portfolio and let us bring your
+                vision to life.
+              </p>
+            </div>
+            <a
+              href="#"
+              class="inline-flex h-10 items-center justify-center rounded-md bg-[#e67e22] px-8 text-sm font-medium text-white shadow transition-colors hover:bg-[#d35400] focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#d35400] disabled:pointer-events-none disabled:opacity-50"
+            >
+              View Portfolio
+            </a>
+          </div>
+          <div class="relative">
+            <div class="absolute top-0 left-0 w-full h-full bg-[#e67e22] opacity-10 rounded-3xl"></div>
+            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[80%] h-[80%] bg-[url('/placeholder.svg')] bg-cover bg-center rounded-3xl"></div>
+          </div>
+        </div>
+      </section>
+      <section class="w-full py-12 md:py-24 lg:py-32 bg-[#f5f5f5]">
+        <div class="container px-4 md:px-6">
+          <div class="flex flex-col items-center justify-center space-y-4 text-center">
+            <div class="space-y-2">
+              <h2 class="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">Featured Work</h2>
+              <p class="max-w-[900px] text-[#666] md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                Explore our collection of retro-inspired design projects that showcase our passion and expertise.
+              </p>
+            </div>
+          </div>
+          <div class="mx-auto grid max-w-5xl items-center gap-6 py-12 lg:grid-cols-3 lg:gap-12">
+            <div class="group relative overflow-hidden rounded-2xl bg-[#fff] shadow-lg transition-all duration-300 hover:scale-105">
+              <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-t from-[#e67e22] to-transparent opacity-30 transition-all duration-300 group-hover:opacity-50"></div>
+              <div class="relative p-6 space-y-2">
+                <img
+                  src="/placeholder.svg"
+                  width="400"
+                  height="300"
+                  alt="Project 1"
+                  class="w-full h-48 object-cover rounded-t-2xl"
+                  style="aspect-ratio: 400 / 300; object-fit: cover;"
+                />
+                <h3 class="text-xl font-bold">Retro Branding</h3>
+                <p class="text-[#666] line-clamp-2">
+                  A vintage-inspired branding project that captures the essence of a classic era.
+                </p>
+              </div>
+            </div>
+            <div class="group relative overflow-hidden rounded-2xl bg-[#fff] shadow-lg transition-all duration-300 hover:scale-105">
+              <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-t from-[#e67e22] to-transparent opacity-30 transition-all duration-300 group-hover:opacity-50"></div>
+              <div class="relative p-6 space-y-2">
+                <img
+                  src="/placeholder.svg"
+                  width="400"
+                  height="300"
+                  alt="Project 2"
+                  class="w-full h-48 object-cover rounded-t-2xl"
+                  style="aspect-ratio: 400 / 300; object-fit: cover;"
+                />
+                <h3 class="text-xl font-bold">Retro Website</h3>
+                <p class="text-[#666] line-clamp-2">
+                  A nostalgic web design that blends vintage aesthetics with modern functionality.
+                </p>
+              </div>
+            </div>
+            <div class="group relative overflow-hidden rounded-2xl bg-[#fff] shadow-lg transition-all duration-300 hover:scale-105">
+              <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-t from-[#e67e22] to-transparent opacity-30 transition-all duration-300 group-hover:opacity-50"></div>
+              <div class="relative p-6 space-y-2">
+                <img
+                  src="/placeholder.svg"
+                  width="400"
+                  height="300"
+                  alt="Project 3"
+                  style="aspect-ratio: 400 / 300; object-fit: cover;"
+                  class="w-full h-48 object-cover rounded-t-2xl"
+                />
+                <h3 class="text-xl font-bold">Retro Packaging</h3>
+                <p class="text-[#666] line-clamp-2">
+                  A vintage-inspired packaging design that captures the essence of a bygone era.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="w-full py-12 md:py-24 lg:py-32 bg-[#f5f5f5]">
+        <div class="container px-4 md:px-6">
+          <div class="flex flex-col items-center justify-center space-y-4 text-center">
+            <div class="space-y-2">
+              <h2 class="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">What Our Clients Say</h2>
+              <p class="max-w-[900px] text-[#666] md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                Hear from our satisfied clients who have experienced the power of our retro-inspired design.
+              </p>
+            </div>
+          </div>
+          <div class="mx-auto grid max-w-5xl items-center gap-6 py-12 lg:grid-cols-2 lg:gap-12">
+            <div class="group relative overflow-hidden rounded-2xl bg-[#fff] shadow-lg transition-all duration-300 hover:scale-105">
+              <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-t from-[#e67e22] to-transparent opacity-30 transition-all duration-300 group-hover:opacity-50"></div>
+              <div class="relative p-6 space-y-2">
+                <div class="flex items-center gap-4">
+                  <div class="rounded-full w-12 h-12 bg-[#e67e22] text-white flex items-center justify-center text-2xl">
+                    JD
+                  </div>
+                  <div>
+                    <h3 class="text-xl font-bold">John Doe</h3>
+                    <p class="text-[#666] text-sm">CEO, Acme Inc.</p>
+                  </div>
+                </div>
+                <p class="text-[#666] italic">
+                  "The team at Retro Design delivered an exceptional branding\n experience that perfectly captured the
+                  essence of our\n company. Highly recommended!"n exceptional branding
+                </p>
+              </div>
+            </div>
+            <div class="group relative overflow-hidden rounded-2xl bg-[#fff] shadow-lg transition-all duration-300 hover:scale-105">
+              <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-t from-[#e67e22] to-transparent opacity-30 transition-all duration-300 group-hover:opacity-50"></div>
+              <div class="relative p-6 space-y-2">
+                <div class="flex items-center gap-4">
+                  <div class="rounded-full w-12 h-12 bg-[#e67e22] text-white flex items-center justify-center text-2xl">
+                    SM
+                  </div>
+                  <div>
+                    <h3 class="text-xl font-bold">Sarah Miller</h3>
+                    <p class="text-[#666] text-sm">Founder, Retro Designs</p>
+                  </div>
+                </div>
+                <p class="text-[#666] italic">
+                  "Working with the Retro Design team was an absolute pleasure.\n They brought our vintage-inspired
+                  vision to life with\n exceptional attention to detail and creativity."
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="w-full py-12 md:py-24 lg:py-32 bg-[#f5f5f5]">
+        <div class="container px-4 md:px-6">
+          <div class="flex flex-col items-center justify-center space-y-4 text-center">
+            <div class="space-y-2">
+              <h2 class="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">Get in Touch</h2>
+              <p class="max-w-[900px] text-[#666] md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                Let's discuss how we can bring your retro-inspired design vision to life. Fill out the form below, and
+                we'll be in touch.
+              </p>
+            </div>
+            <div class="mx-auto w-full max-w-sm space-y-2">
+              <form class="flex flex-col gap-4">
+                <input
+                  class="flex h-10 w-full border border-input text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 px-4 py-2 rounded-md bg-[#fff] focus:ring-0 focus:ring-offset-0 focus:outline-none"
+                  placeholder="Name"
+                  type="text"
+                />
+                <input
+                  class="flex h-10 w-full border border-input text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 px-4 py-2 rounded-md bg-[#fff] focus:ring-0 focus:ring-offset-0 focus:outline-none"
+                  placeholder="Email"
+                  type="email"
+                />
+                <textarea
+                  class="flex min-h-[80px] w-full border border-input text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 px-4 py-2 rounded-md bg-[#fff] focus:ring-0 focus:ring-offset-0 focus:outline-none"
+                  placeholder="Message"
+                ></textarea>
+                <button
+                  class="whitespace-nowrap ring-offset-background focus-visible:ring-offset-2 py-2 inline-flex h-10 items-center justify-center rounded-md bg-[#e67e22] px-8 text-sm font-medium text-white shadow transition-colors hover:bg-[#d35400] focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#d35400] disabled:pointer-events-none disabled:opacity-50"
+                  type="submit"
+                >
+                  Submit
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="flex flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6 border-t">
+      <p class="text-xs text-[#666]">© 2024 Retro Design. All rights reserved.</p>
+      <nav class="sm:ml-auto flex gap-4 sm:gap-6">
+        <a class="text-xs hover:underline underline-offset-4 text-[#666]" href="#">
+          Terms of Service
+        </a>
+        <a href="#"></a>
+      </nav>
+    </footer>
+  </div>
+  </div>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('nav-menu');
+
+    hamburger.addEventListener('click', () => {
+      navMenu.classList.toggle('hidden');
+      navMenu.classList.toggle('flex');
+      navMenu.classList.toggle('flex-col');
+      navMenu.classList.toggle('absolute');
+      navMenu.classList.toggle('top-14');
+      navMenu.classList.toggle('left-0');
+      navMenu.classList.toggle('right-0');
+      navMenu.classList.toggle('bg-[#f5f5f5]');
+      navMenu.classList.toggle('shadow-md');
+      navMenu.classList.toggle('p-4');
+    });
+
+    window.addEventListener('resize', () => {
+      if (window.innerWidth >= 1024) {
+        navMenu.classList.remove('hidden', 'flex-col', 'absolute', 'top-14', 'left-0', 'right-0', 'bg-[#f5f5f5]', 'shadow-md', 'p-4');
+        navMenu.classList.add('flex');
+      } else {
+        navMenu.classList.add('hidden');
+        navMenu.classList.remove('flex');
+      }
+    });
+  </script>
+</body></body>
+</html>
+
