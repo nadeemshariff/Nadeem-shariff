@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dot with undo and redo</title>
+    <style>
+        .dot {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: black;
+            position: absolute;
+        }
+        #container {
+            
+            width: 400px;
+            height: 400px;
+            border: 1px solid black;
+            position: relative;
+        }
+        button {
+            margin-top: 10px;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container"></div>
+    <button id="undoBtn">Undo</button>
+    <button id="redoBtn">Redo</button>
+    <button id="resetBtn">Reset</button>
+
+    
+    
+    
+    
+    
+    
+    <script src="./dotscript.js"></script>
+    
+</body>
+</html>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <!-- <script>
+        
+        
+        
+        // const container = document.getElementById('container');
+        // const undoBtn = document.getElementById('undoBtn');
+        // const redoBtn = document.getElementById('redoBtn');
+        // const resetBtn = document.getElementById('resetBtn');
+        // let dots = [];
+        // let removedDots = [];
+
+        // function updateButtons() {
+        //     undoBtn.disabled = dots.length === 0;
+        //     redoBtn.disabled = removedDots.length === 0;
+        //     resetBtn.disabled = dots.length === 0;
+        // }
+
+        // container.addEventListener('click', (e) => {
+        //     const dot = document.createElement('div');
+        //     dot.className = 'dot';
+        //     dot.style.left = `${e.clientX - container.offsetLeft}px`;
+        //     dot.style.top = `${e.clientY - container.offsetTop}px`;
+        //     container.appendChild(dot);
+        //     dots.push(dot);
+        //     removedDots = [];
+        //     updateButtons();
+        // });
+
+        // undoBtn.addEventListener('click', () => {
+        //     if (dots.length > 0) {
+        //         const removedDot = dots.pop();
+        //         container.removeChild(removedDot);
+        //         removedDots.push(removedDot);
+        //         updateButtons();
+        //     }
+        // });
+
+        // redoBtn.addEventListener('click', () => {
+        //     if (removedDots.length > 0) {
+        //         const redoDot = removedDots.pop();
+        //         container.appendChild(redoDot);
+        //         dots.push(redoDot);
+        //         updateButtons();
+        //     }
+        // });
+
+        // resetBtn.addEventListener('click', () => {
+        //     while (container.firstChild) {
+        //         container.removeChild(container.firstChild);
+        //     }
+        //     dots = [];
+        //     removedDots = [];
+        //     updateButtons();
+        // });
+
+        // updateButtons();
+
+
+    </script> -->
