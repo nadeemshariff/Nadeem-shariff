@@ -34,3 +34,10 @@
 
 console.log(Math.sqrt(-1))
 console.log(undefined + undefined)
+
+// Create a array
+const arr = [1, 2, 3, 4, 5];
+//Array constructor
+const fruits = new Array('Apple','grape','orange');
+
+console.log(arr, fruits)
