@@ -27,6 +27,8 @@
 
         </div>
 
+        <!-- NavBar -->
+
 
         <nav class="flex justify-between items-center mt-4 bg-white p-3 rounded-lg shadow-sm">
             <a href="#" class="text-blue-600 font-bold text-xl no-underline hover:text-blue-800">Port</a>
@@ -36,9 +38,10 @@
                 <li><a href="#contact" class="px-2.5 py-1.5 no-underline text-gray-700 hover:text-blue-600 transition duration-300">Contact</a></li>
             </ul>
 
+            <!-- NavBar Socials  -->
 
-            <div class="flex items-center space-x-4">
-                <div class="relative">
+            <div class="flex items-center">
+                <div class="relative mr-4">
                     <button id="socialDropdownBtn" class="px-3 py-2 bg-gray-200 rounded hover:bg-gray-300 transition duration-300 focus:outline-none">
                         Socials
                         <svg class="w-4 h-4 ml-2 inline-block transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
@@ -58,22 +61,20 @@
                         </a>
                     </div>
                 </div>
-            </div>
-                            <button onclick="openLoginModal()" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition duration-300">Login</button>
-                            <span id="loginStatus" class="ml-2"></span>
+                <!-- Login button -->
+                <button onclick="openLoginModal()" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition duration-300">Login</button>
+                <span id="loginStatus" class="ml-2"></span>
 
-                            <!-- Login Modal -->
-                            <div id="loginModal" class="fixed inset-0 bg-gray-600 bg-opacity-50 hidden items-center justify-center">
-                                <div class="bg-white p-8 rounded-lg shadow-xl">
-                                    <h2 class="text-2xl mb-4">Login</h2>
-                                    <input type="text" id="username" placeholder="Username" class="w-full p-2 mb-4 border rounded">
-                                    <input type="password" id="password" placeholder="Password" class="w-full p-2 mb-4 border rounded">
-                                    <button onclick="login()" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition duration-300">Login</button>
-                                    <button onclick="closeLoginModal()" class="px-4 py-2 bg-gray-300 text-gray-700 rounded hover:bg-gray-400 transition duration-300 ml-2">Cancel</button>
-                                </div>
-                            </div>
-
-                        </div>            
+                <!-- Login Modal -->
+                <div id="loginModal" class="fixed inset-0 bg-gray-600 bg-opacity-50 hidden items-center justify-center">
+                    <div class="bg-white p-8 rounded-lg shadow-xl">
+                        <h2 class="text-2xl mb-4">Login</h2>
+                        <input type="text" id="username" placeholder="Username" class="w-full p-2 mb-4 border rounded">
+                        <input type="password" id="password" placeholder="Password" class="w-full p-2 mb-4 border rounded">
+                        <button onclick="login()" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition duration-300">Login</button>
+                        <button onclick="closeLoginModal()" class="px-4 py-2 bg-gray-300 text-gray-700 rounded hover:bg-gray-400 transition duration-300 ml-2">Cancel</button>
+                    </div>
+                </div>
             </div>
         </nav>
     </header>
