@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DEMO</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+</head>
+<body>
+
+     <!-- Banner in Header -->
+     <header class="bg-gray-100 p-2.5">
+
+        <div id="banner" class="mt-2.5 text-center relative bg-yellow-200 p-4 rounded-lg shadow-md">
+
+            <span class="text-gray-800 font-semibold">Stay updated with our latest news!</span>
+            <a href="#subscribe" class="ml-2.5 py-1.5 px-2.5 rounded-full bg-blue-600 text-white no-underline hover:bg-blue-700 transition duration-300">Subscribe</a>
+            
+            <button onclick="closeBanner()" class="absolute right-2.5 top-1/2 transform -translate-y-1/2 bg-transparent border-none cursor-pointer text-gray-600 hover:text-gray-800">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>    
+
+        </div>
+
+
+        <nav class="flex justify-between items-center mt-4 bg-white p-3 rounded-lg shadow-sm">
+            <a href="#" class="text-blue-600 font-bold text-xl no-underline hover:text-blue-800">Port</a>
+            <ul class="flex space-x-4">
+                <li><a href="#home" class="px-2.5 py-1.5 no-underline text-gray-700 hover:text-blue-600 transition duration-300">Home</a></li>
+                <li><a href="#about" class="px-2.5 py-1.5 no-underline text-gray-700 hover:text-blue-600 transition duration-300">About</a></li>
+                <li><a href="#contact" class="px-2.5 py-1.5 no-underline text-gray-700 hover:text-blue-600 transition duration-300">Contact</a></li>
+            </ul>
+
+
+            <div class="flex items-center space-x-4">
+                <div class="relative">
+                    <button id="socialDropdownBtn" class="px-3 py-2 bg-gray-200 rounded hover:bg-gray-300 transition duration-300 focus:outline-none">
+                        Socials
+                        <svg class="w-4 h-4 ml-2 inline-block transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div id="socialDropdown" class="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg hidden transition-opacity duration-300 opacity-0">
+                        <a href="https://www.facebook.com" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-100 hover:text-blue-600 transition duration-300">
+                            <i class="fab fa-facebook-f w-4 h-4 inline-block mr-2"></i>
+                            Facebook
+                        </a>
+                        <a href="https://www.twitter.com" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-100 hover:text-blue-400 transition duration-300">
+                            <i class="fab fa-twitter w-4 h-4 inline-block mr-2"></i>
+                            Twitter
+                        </a>
+                        <a href="https://www.instagram.com" class="block px-4 py-2 text-sm text-gray-700 hover:bg-pink-100 hover:text-pink-600 transition duration-300">
+                            <i class="fab fa-instagram w-4 h-4 inline-block mr-2"></i>
+                            Instagram
+                        </a>
+                    </div>
+                </div>
+            </div>
+                            <button onclick="openLoginModal()" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition duration-300">Login</button>
+                            <span id="loginStatus" class="ml-2"></span>
+
+                            <!-- Login Modal -->
+                            <div id="loginModal" class="fixed inset-0 bg-gray-600 bg-opacity-50 hidden items-center justify-center">
+                                <div class="bg-white p-8 rounded-lg shadow-xl">
+                                    <h2 class="text-2xl mb-4">Login</h2>
+                                    <input type="text" id="username" placeholder="Username" class="w-full p-2 mb-4 border rounded">
+                                    <input type="password" id="password" placeholder="Password" class="w-full p-2 mb-4 border rounded">
+                                    <button onclick="login()" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition duration-300">Login</button>
+                                    <button onclick="closeLoginModal()" class="px-4 py-2 bg-gray-300 text-gray-700 rounded hover:bg-gray-400 transition duration-300 ml-2">Cancel</button>
+                                </div>
+                            </div>
+
+                        </div>            
+            </div>
+        </nav>
+    </header>
+
+    <script>
+        const socialDropdownBtn = document.getElementById('socialDropdownBtn');
+                const socialDropdown = document.getElementById('socialDropdown');
+                let isOpen = false;
+
+                socialDropdownBtn.addEventListener('click', () => {
+                    isOpen = !isOpen;
+                    toggleDropdown();
+                });
+
+                socialDropdownBtn.addEventListener('mouseenter', () => {
+                    isOpen = true;
+                    toggleDropdown();
+                });
+
+                socialDropdown.addEventListener('mouseleave', () => {
+                    isOpen = false;
+                    toggleDropdown();
+                });
+
+                function toggleDropdown() {
+                    if (isOpen) {
+                        socialDropdown.classList.remove('hidden', 'opacity-0');
+                        socialDropdown.classList.add('opacity-100');
+                        socialDropdownBtn.querySelector('svg').classList.add('rotate-180');
+                    } else {
+                        socialDropdown.classList.remove('opacity-100');
+                        socialDropdown.classList.add('opacity-0');
+                        setTimeout(() => {
+                            if (!isOpen) {
+                                socialDropdown.classList.add('hidden');
+                            }
+                        }, 300);
+                        socialDropdownBtn.querySelector('svg').classList.remove('rotate-180');
+                    }
+                }
+
+
+
+
+
+
+        // // When the user clicks on the button, scroll to the top of the document
+        // const topBtn = document.getElementById('topBtn');
+        // topBtn.addEventListener('click', () => {
+        //     window.scrollTo(0, 0);
+        // });
+
+        const banner = document.getElementById('banner');
+        const closeBanner = () => banner.style.display = 'none';
+
+        // when subscribe button is clicked send an email to the user.
+
+        const subscribe = document.getElementById('subscribe');
+        const emailInput = document.getElementById('email');
+
+        subscribe.addEventListener('click', () => {
+            const email = emailInput.value;
+            console.log(email);
+        });
+
+        // Adding login functionality
+
+        function openLoginModal() {
+            document.getElementById('loginModal').classList.remove('hidden');
+            document.getElementById('loginModal').classList.add('flex');
+        }
+
+        function closeLoginModal() {
+            document.getElementById('loginModal').classList.add('hidden');
+            document.getElementById('loginModal').classList.remove('flex');
+        }
+
+        function login() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            // Here you would typically send these credentials to a server for verification
+            // For this example, we'll just check if both fields are filled
+            if (username && password) {
+                document.querySelector('button[onclick="openLoginModal()"]').textContent = username;
+                closeLoginModal();
+            } else {
+                alert('Please enter both username and password');
+            }
+        }
+
+
+    </script>
+
+
+
+
+    <script src=".script.js">
+
+
+    </script>
+</body>
+</html>
