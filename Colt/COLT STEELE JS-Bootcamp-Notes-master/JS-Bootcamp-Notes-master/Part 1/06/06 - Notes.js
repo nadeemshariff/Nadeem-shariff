@@ -43,6 +43,11 @@ simpleObject.newArray = ["a", "b", "c"]
 simpleObject.firstProperty += -58
 
 // To get an arrays of keys
-simpleObject.keys()
-// To get an arrays of values
-simpleObject.values()
+Object.keys(simpleObject)// To get an arrays of values
+Object.values(simpleObject)
+
+console.log(simpleObject)
+// To get an arrays of key-value pairs
+Object.entries(simpleObject)
+// To get an arrays of key-value pairs
+Object.entries(simpleObject).map( ([key, value]) => `${key} : ${value}`)
