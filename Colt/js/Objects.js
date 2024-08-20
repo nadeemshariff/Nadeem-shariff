@@ -127,3 +127,59 @@ cart.showCart();
 
 cart.removeItem("Shoes");
 console.log("Removed Shoes from cart");
+
+
+const library = [
+    {
+    title: "The Catcher in the Rye",
+    author: "J. D. Salinger",
+    year: 1951,
+    status: {
+        own: true,
+        reading: false,
+        read: false
+    },
+},
+
+{
+    title: "To Kill a Mockingbird",
+    author: "Harper Lee",
+    year: 1960,
+    status: {
+        own: true,
+        reading: false,
+        read: false
+    },
+},
+
+{
+    title: "1984",
+    author: "George Orwell",
+    year: 1949,
+    status: {
+        own: true,
+        reading: false,
+        read: false
+    },
+},
+];
+
+library[0].status.read = true;
+library[1].status.read = true;
+library[2].status.read = true;
+
+console.log(library);
+
+//Destructuring and Naming
+
+const { title, author, year, status } = library[0];
+console.log(title, author, year, status);
+
+
+const { title: myTitle, author: myAuthor, year: myYear, status: myStatus } = library[0];
+console.log(myTitle, myAuthor, myYear, myStatus);
+
+// object to String
+const libraryJSON = JSON.stringify(library);
+
+console.log(libraryJSON);

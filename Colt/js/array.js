@@ -48,4 +48,18 @@ let arr1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 // console.log(arr1);
 arr1.sort();
 
-console.log(arr1);
+console.log(arr1); 
+
+const array1 = [1,2,3,4,5,6,7,8,9];
+const array2 = [10,11,12,13,14,15];
+
+const newArr = [...array1, ...array2];
+
+console.log(newArr);
+
+// For Data scraping
+
+console.log(Array.isArray("Rohini"))
+console.log(Array.from("Mansha"))
+console.log(Array.from({name: "Deepthi Kanithi"}))
+
