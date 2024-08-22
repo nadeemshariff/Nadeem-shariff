@@ -119,3 +119,18 @@ newCoding.forEach((item) => {
     console.log(item.langName);
     console.log(item.langName, item.langFileName);
 });
+
+// for of
+for (const element of object) {
+    
+}
+
+
+// for in
+
+for (const key in object) {
+    if (Object.prototype.hasOwnProperty.call(object, key)) {
+        const element = object[key];
+         
+    }
+}
