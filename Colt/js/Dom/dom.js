@@ -112,3 +112,32 @@ document.addEventListener('click', function(event) {
 });
 
 // Understanding the DOM is crucial for dynamic web page manipulation with JavaScript.
+// --------------------------------------------------------------------------------------------------------------
+
+// Examples of DOM methods and their functionality
+const heading = document.querySelector('h1');
+heading.textContent = 'New heading!'; // Changes the text content of the h1 element
+
+const paragraphs = document.querySelectorAll('p');
+paragraphs.forEach(paragraph => {
+    paragraph.style.color = 'red'; // Changes the text color of all p elements
+});
+
+const button = document.createElement('button');
+button.textContent = 'Click me!';
+document.body.appendChild(button); // Adds a new button to the page
+
+const list = document.createElement('ul');
+document.body.appendChild(list); // Adds a new unordered list to the page
+
+const listItems = ['Item 1', 'Item 2', 'Item 3'];
+listItems.forEach(item => {
+    const listItem = document.createElement('li');
+    listItem.textContent = item;
+    list.appendChild(listItem); // Adds a new list item to the list
+});
+
+const link = document.createElement('a');
+link.textContent = 'Visit Google!';
+link.href = 'https://www.google.com';
+document.body.appendChild(link); // Adds a new link to the page

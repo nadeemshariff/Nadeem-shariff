@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom Image random position</title>
+</head>
+<body>
+
+    <img id="img" src="https://unsplash.com/photos/a-woman-sitting-at-a-table-surrounded-by-candles-JqQVZGsi2Io" alt="pic" srcset="">
+
+    <style>
+        #img {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+        }
+    </style>
+
+    <script>
+        const img = document.querySelector('#img');
+
+        function getRandomIntInclusive(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min + 1) + min);
+        }
+        
+        function setRandomPosition() {
+            const maxX = window.innerWidth - 200;
+            const maxY = window.innerHeight - 200;
+            const randomX = getRandomIntInclusive(0, maxX);
+            const randomY = getRandomIntInclusive(0, maxY);
+            img.style.transition = 'transform 0.5s ease-in-out';
+            img.style.transform = `translate(${randomX}px, ${randomY}px)`;
+        }
+
+        setRandomPosition();
+        window.addEventListener('resize', setRandomPosition);
+        
+        setInterval(setRandomPosition, 2000);
+    </script>
+    
+</body>
+</html>
