@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic DOM Manipulation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 p-8">
+    <div class="max-w-md mx-auto bg-white p-6 rounded-lg shadow-md">
+        <h1 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-4">Text and Style Manipulation</h1>
+        <p id="textElement" class="mb-4">Click the buttons to change me!</p>
+        <div class="space-y-2">
+            <button id="changeTextBtn" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Change Text</button>
+            <button id="changeColorBtn" class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600">Change Color</button>
+            <button id="toggleBoldBtn" class="bg-yellow-500 text-white px-4 py-2 rounded hover:bg-yellow-600">Toggle Bold</button>
+        </div>
+    </div>
+
+    <script>
+        const textElement = document.getElementById('textElement');
+        const changeTextBtn = document.getElementById('changeTextBtn');
+        const changeColorBtn = document.getElementById('changeColorBtn');
+        const toggleBoldBtn = document.getElementById('toggleBoldBtn');
+
+        changeTextBtn.addEventListener('click', () => {
+            textElement.textContent = 'Text changed!';
+        });
+
+        changeColorBtn.addEventListener('click', () => {
+            textElement.style.color = textElement.style.color === 'red' ? 'black' : 'red';
+        });
+
+        toggleBoldBtn.addEventListener('click', () => {
+            textElement.classList.toggle('font-bold');
+        });
+    </script>
+</body>
+</html>

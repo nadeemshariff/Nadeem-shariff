@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic List Management</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 p-8">
+    <div class="max-w-md mx-auto bg-white p-6 rounded-lg shadow-md">
+        <h1 class="text-2xl font-bold mb-4">Dynamic List</h1>
+        <div class="mb-4">
+            <input type="text" id="itemInput" placeholder="Enter an item" class="border p-2 w-full rounded">
+        </div>
+        <button id="addItemBtn" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 mb-4">Add Item</button>
+        <ul id="itemList" class="list-disc pl-5"></ul>
+    </div>
+
+    <script>
+        const itemInput = document.getElementById('itemInput');
+        const addItemBtn = document.getElementById('addItemBtn');
+        const itemList = document.getElementById('itemList');
+
+        addItemBtn.addEventListener('click', addItem);
+        itemInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') addItem();
+        });
+
+        function addItem() {
+            const itemText = itemInput.value.trim();
+            if (itemText) {
+                const li = document.createElement('li');
+                li.className = 'mb-2 flex justify-between items-center';
+                
+                const span = document.createElement('span');
+                span.textContent = itemText;
+                li.appendChild(span);
+                
+                const removeBtn = document.createElement('button');
+                removeBtn.className = 'bg-red-500 text-white px-2 py-1 rounded hover:bg-red-600 text-sm';
+                removeBtn.textContent = 'Remove';
+                removeBtn.addEventListener('click', () => {
+                    li.remove();
+                });
+                li.appendChild(removeBtn);
+                
+                itemList.appendChild(li);
+                itemInput.value = '';
+            }
+        }
+    </script>
+</body>
+</html>

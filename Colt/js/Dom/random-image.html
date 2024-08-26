@@ -7,19 +7,27 @@
 </head>
 <body>
 
-    <img id="img" src="https://unsplash.com/photos/a-woman-sitting-at-a-table-surrounded-by-candles-JqQVZGsi2Io" alt="pic" srcset="">
+    <div id="square"></div>
 
     <style>
-        #img {
+        #square {
             position: absolute;
             width: 200px;
             height: 200px;
-            object-fit: cover;
+            animation: changeColor 5s infinite;
+        }
+
+        @keyframes changeColor {
+            0% { background-color: red; }
+            25% { background-color: yellow; }
+            50% { background-color: blue; }
+            75% { background-color: green; }
+            100% { background-color: red; }
         }
     </style>
 
     <script>
-        const img = document.querySelector('#img');
+        const square = document.querySelector('#square');
 
         function getRandomIntInclusive(min, max) {
             min = Math.ceil(min);
@@ -32,8 +40,8 @@
             const maxY = window.innerHeight - 200;
             const randomX = getRandomIntInclusive(0, maxX);
             const randomY = getRandomIntInclusive(0, maxY);
-            img.style.transition = 'transform 0.5s ease-in-out';
-            img.style.transform = `translate(${randomX}px, ${randomY}px)`;
+            square.style.transition = 'transform 0.5s ease-in-out';
+            square.style.transform = `translate(${randomX}px, ${randomY}px)`;
         }
 
         setRandomPosition();
