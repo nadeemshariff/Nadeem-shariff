@@ -1,0 +1,231 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Content Editor</title>
+</head>
+<body>
+    <h1 id="title">Dynamic Content Editor</h1>
+    <div id="content">
+        <p>This is editable content.</p>
+    </div>
+    <button id="changeText">Change Text</button>
+    <button id="changeHTML">Change HTML</button>
+    <button id="changeStyle">Change Style</button>
+    <button id="changeAttribute">Change Attribute</button>
+
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        #title {
+            color: #333;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+            animation: fadeIn 1s ease-out;
+        }
+
+        #content {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin: 20px 0;
+            max-width: 80%;
+            transition: all 0.3s ease;
+        }
+
+        button {
+            background: #4CAF50;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            transition-duration: 0.4s;
+            cursor: pointer;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        button:hover {
+            background-color: #45a049;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            /* transform: translateY(-2px); */
+            transform: translateX(-5px);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+    </style>
+
+    <script>
+        const content = document.getElementById('content');
+
+        document.getElementById('changeText').addEventListener('click', () => {
+            content.textContent = prompt('Enter new text:');
+            animateContent();
+        });
+
+        document.getElementById('changeHTML').addEventListener('click', () => {
+            content.innerHTML = prompt('Enter new HTML:');
+            animateContent();
+        });
+
+        document.getElementById('changeStyle').addEventListener('click', () => {
+            const property = prompt('Enter CSS property:');
+            const value = prompt('Enter CSS value:');
+            content.style[property] = value;
+            animateContent();
+        });
+
+        document.getElementById('changeAttribute').addEventListener('click', () => {
+            const attr = prompt('Enter attribute name:');
+            const value = prompt('Enter attribute value:');
+            content.setAttribute(attr, value);
+            animateContent();
+        });
+
+        function animateContent() {
+            content.style.animation = 'pulse 0.5s ease-in-out';
+            setTimeout(() => {
+                content.style.animation = '';
+            }, 500);
+        }
+
+        // Initial animation
+        document.addEventListener('DOMContentLoaded', () => {
+            animateContent();
+        });
+    </script>
+</body>
+</html> -->
+
+//---------------------------------------------------------------------------------------------------------------------------------
+
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Color Palette</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <style>
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .animate-gradient {
+            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-center bg-gray-100 animate-gradient transition-all duration-500">
+    <h1 class="text-4xl font-bold mb-8 text-white shadow-lg p-4 rounded-lg bg-opacity-30 bg-black transition-all duration-300 hover:scale-105">Professional Color Picker</h1>
+    <div id="palette" class="bg-white p-6 rounded-lg shadow-xl transition-all duration-300 hover:shadow-2xl"></div>
+    <div id="selected-color" class="mt-8 text-center">
+        <p class="text-xl font-semibold text-white mb-2">Selected Color: <span id="color-value" class="font-mono bg-black bg-opacity-30 px-2 py-1 rounded">#FFFFFF</span></p>
+        <div id="color-preview" class="w-32 h-32 mx-auto rounded-full shadow-lg transition-all duration-300 hover:scale-110"></div>
+    </div>
+
+    <script>
+        const palette = document.getElementById('palette');
+        const colorValue = document.getElementById('color-value');
+        const colorPreview = document.getElementById('color-preview');
+
+        function createColorGradient(hue) {
+            const canvas = document.createElement('canvas');
+            canvas.width = 200;
+            canvas.height = 200;
+            canvas.classList.add('rounded-lg', 'shadow-md', 'transition-all', 'duration-300', 'hover:shadow-lg');
+            const ctx = canvas.getContext('2d');
+
+            for (let x = 0; x < 200; x++) {
+                for (let y = 0; y < 200; y++) {
+                    const saturation = x / 200 * 100;
+                    const lightness = (200 - y) / 200 * 100;
+                    ctx.fillStyle = `hsl(${hue}, ${saturation}%, ${lightness}%)`;
+                    ctx.fillRect(x, y, 1, 1);
+                }
+            }
+
+            return canvas;
+        }
+
+        function createHueSlider() {
+            const hueSlider = document.createElement('input');
+            hueSlider.type = 'range';
+            hueSlider.min = 0;
+            hueSlider.max = 360;
+            hueSlider.value = 0;
+            hueSlider.classList.add('w-full', 'mt-4', 'appearance-none', 'bg-gray-200', 'h-2', 'rounded-full');
+            return hueSlider;
+        }
+
+        function updateColor(hue, x, y) {
+            const saturation = x / 200 * 100;
+            const lightness = (200 - y) / 200 * 50;
+            const color = `hsl(${hue}, ${saturation}%, ${lightness}%)`;
+            gsap.to(document.body, { backgroundColor: color, duration: 0.5 });
+            gsap.to(colorValue, { color: color, duration: 0.3 });
+            colorValue.textContent = color;
+            gsap.to(colorPreview, { backgroundColor: color, duration: 0.3 });
+        }
+
+        const hueSlider = createHueSlider();
+        const colorGradient = createColorGradient(0);
+
+        colorGradient.addEventListener('click', (e) => {
+            const rect = colorGradient.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            updateColor(hueSlider.value, x, y);
+        });
+
+        hueSlider.addEventListener('input', () => {
+            const hue = hueSlider.value;
+            const newGradient = createColorGradient(hue);
+            gsap.to(newGradient, { opacity: 0, duration: 0.2, onComplete: () => {
+                palette.replaceChild(newGradient, colorGradient);
+                gsap.to(newGradient, { opacity: 1, duration: 0.2 });
+                palette.insertBefore(hueSlider, newGradient.nextSibling);
+            }});
+        });
+
+        palette.appendChild(colorGradient);
+        palette.appendChild(hueSlider);
+
+        updateColor(0, 100, 100);
+
+        gsap.from('h1', { opacity: 0, y: -50, duration: 1, ease: 'back.out(1.7)' });
+        gsap.from('#palette', { opacity: 0, scale: 0.8, duration: 1, delay: 0.3, ease: 'elastic.out(1, 0.7)' });
+        gsap.from('#selected-color', { opacity: 0, y: 50, duration: 1, delay: 0.6, ease: 'back.out(1.7)' });
+    </script>
+</body>
+</html>
+</html>
