@@ -1,4 +1,6 @@
 {
     "livePreview.defaultPreviewPath": "/concepts/javascript/TM JS/object-spread/index.html",
-    "todo-tree.tree.showBadges": false
+    "todo-tree.tree.showBadges": false,
+    "pieces.cloudCapabilities": "Blended",
+    "pieces.telemetry": true
 }
