@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    
+<!-- Header 1: Simple centered -->
+<header class="bg-gray-100 py-4">
+    <div class="container mx-auto text-center">
+      <h1 class="text-2xl font-bold">Company Name</h1>
+    </div>
+  </header>
+  
+  <!-- Header 2: Left-aligned with navigation -->
+  <header class="bg-blue-600 text-white py-4">
+    <div class="container mx-auto flex justify-between items-center">
+      <h1 class="text-xl font-semibold">Logo</h1>
+      <nav>
+        <ul class="flex space-x-4">
+          <li><a href="#" class="hover:text-blue-200">Home</a></li>
+          <li><a href="#" class="hover:text-blue-200">About</a></li>
+          <li><a href="#" class="hover:text-blue-200">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  
+  <!-- Header 3: Dark theme with search bar -->
+  <header class="bg-gray-900 text-white py-6">
+    <div class="container mx-auto flex justify-between items-center">
+      <h1 class="text-2xl font-bold">Dark Header</h1>
+      <div class="relative">
+        <input type="text" placeholder="Search..." class="bg-gray-800 text-white px-4 py-2 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500">
+        <button class="absolute right-0 top-0 mt-2 mr-3">
+          <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+  
+  <!-- Header 4: Gradient background -->
+  <header class="bg-gradient-to-r from-purple-500 to-pink-500 text-white py-8">
+    <div class="container mx-auto text-center">
+      <h1 class="text-4xl font-extrabold">Gradient Header</h1>
+      <p class="mt-2 text-lg">Stunning designs with Tailwind CSS</p>
+    </div>
+  </header>
+  
+  <!-- Header 5: With hero image -->
+  <header class="relative bg-cover bg-center h-96" style="background-image: url('https://source.unsplash.com/random/1600x900');">
+    <div class="absolute inset-0 bg-black opacity-50"></div>
+    <div class="relative container mx-auto h-full flex items-center justify-center">
+      <h1 class="text-white text-5xl font-bold text-center">Hero Header</h1>
+    </div>
+  </header>
+  
+  <!-- Header 6: Sticky top bar -->
+  <header class="bg-white shadow-md sticky top-0 z-50">
+    <div class="container mx-auto py-4 flex justify-between items-center">
+      <h1 class="text-xl font-semibold">Sticky Header</h1>
+      <nav>
+        <ul class="flex space-x-4">
+          <li><a href="#" class="text-gray-600 hover:text-gray-900">Home</a></li>
+          <li><a href="#" class="text-gray-600 hover:text-gray-900">About</a></li>
+          <li><a href="#" class="text-gray-600 hover:text-gray-900">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  
+  <!-- Header 7: With dropdown menu -->
+  <header class="bg-indigo-600 text-white py-4">
+    <div class="container mx-auto flex justify-between items-center">
+      <h1 class="text-2xl font-bold">Dropdown Header</h1>
+      <nav>
+        <ul class="flex space-x-4">
+          <li><a href="#" class="hover:text-indigo-200">Home</a></li>
+          <li class="relative group">
+            <a href="#" class="hover:text-indigo-200">Services</a>
+            <ul class="absolute left-0 hidden pt-2 group-hover:block">
+              <li><a href="#" class="block whitespace-nowrap bg-indigo-500 py-2 px-4 hover:bg-indigo-400">Service 1</a></li>
+              <li><a href="#" class="block whitespace-nowrap bg-indigo-500 py-2 px-4 hover:bg-indigo-400">Service 2</a></li>
+              <li><a href="#" class="block whitespace-nowrap bg-indigo-500 py-2 px-4 hover:bg-indigo-400">Service 3</a></li>
+            </ul>
+          </li>
+          <li><a href="#" class="hover:text-indigo-200">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  
+  <!-- Header 8: Two-row header -->
+  <header class="bg-gray-100">
+    <div class="container mx-auto py-2 flex justify-between items-center">
+      <p class="text-sm">Call us: (123) 456-7890</p>
+      <div class="flex space-x-4">
+        <a href="#" class="text-sm hover:text-gray-600">Login</a>
+        <a href="#" class="text-sm hover:text-gray-600">Register</a>
+      </div>
+    </div>
+    <div class="bg-white shadow-md">
+      <div class="container mx-auto py-4 flex justify-between items-center">
+        <h1 class="text-2xl font-bold">Two-Row Header</h1>
+        <nav>
+          <ul class="flex space-x-4">
+            <li><a href="#" class="hover:text-gray-600">Home</a></li>
+            <li><a href="#" class="hover:text-gray-600">About</a></li>
+            <li><a href="#" class="hover:text-gray-600">Services</a></li>
+            <li><a href="#" class="hover:text-gray-600">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+  
+  <!-- Header 9: Centered with border -->
+  <header class="border-b-4 border-blue-500 py-6">
+    <div class="container mx-auto text-center">
+      <h1 class="text-3xl font-bold">Bordered Header</h1>
+      <nav class="mt-4">
+        <ul class="flex justify-center space-x-6">
+          <li><a href="#" class="text-gray-600 hover:text-blue-500">Home</a></li>
+          <li><a href="#" class="text-gray-600 hover:text-blue-500">About</a></li>
+          <li><a href="#" class="text-gray-600 hover:text-blue-500">Services</a></li>
+          <li><a href="#" class="text-gray-600 hover:text-blue-500">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  
+  <!-- Header 10: With announcement bar -->
+  <header>
+    <div class="bg-yellow-400 py-2 text-center">
+      <p class="text-sm font-semibold">🎉 Special offer: 20% off all products! Use code: SUMMER20</p>
+    </div>
+    <div class="bg-white shadow-md py-4">
+      <div class="container mx-auto flex justify-between items-center">
+        <h1 class="text-2xl font-bold">Announcement Header</h1>
+        <nav>
+          <ul class="flex space-x-4">
+            <li><a href="#" class="hover:text-gray-600">Shop</a></li>
+            <li><a href="#" class="hover:text-gray-600">About</a></li>
+            <li><a href="#" class="hover:text-gray-600">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+  
+  <!-- Header 11: Minimalist with underline effect -->
+  <header class="bg-white py-6">
+    <div class="container mx-auto">
+      <nav>
+        <ul class="flex justify-center space-x-8">
+          <li><a href="#" class="text-lg font-medium hover:text-gray-600 relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-black after:transform after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100">Home</a></li>
+          <li><a href="#" class="text-lg font-medium hover:text-gray-600 relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-black after:transform after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100">About</a></li>
+          <li><a href="#" class="text-lg font-medium hover:text-gray-600 relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-black after:transform after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100">Services</a></li>
+          <li><a href="#" class="text-lg font-medium hover:text-gray-600 relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-black after:transform after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  
+  <!-- Header 12: With social media icons -->
+  <header class="bg-gray-800 text-white py-4">
+    <div class="container mx-auto flex justify-between items-center">
+      <h1 class="text-2xl font-bold">Social Header</h1>
+      <nav class="flex items-center space-x-4">
+        <a href="#" class="hover:text-gray-300 hover:text-blue-500">
+          <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </a>
+        <a href="#" class="hover:text-gray-300">
+          <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg>
+        </a>
+        <a href="#" class="hover:text-gray-300">
+          <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.
+  147.558 2.447.96 1.905 1.326 3.68 1.326 5.605 0 7.086-5.804 12.89-12.89 12.89S0 19.086 0 12C0 5.803 5.804 0 12 0zm3.204 16.524c3.153-1.54 5.325-4.739 5.325-8.524 0-5.197-4.213-9.41-9.41-9.41S1.71 2.803 1.71 8c0 3.785 2.172 6.984 5.325 8.524a4.16 4.16 0 01-1.555 1.763C2.52 20.254 0 16.454 0 12 0 5.373 5.373 0 12 0s12 5.373 12 12c0 4.454-2.52 8.254-5.48 10.287a4.16 4.16 0 01-1.555-1.763z"/></svg>
+        </a>
+      </nav>
+    </div>
+  </header>
+  
+  <!-- Header 13: With search bar -->
+  <header class="bg-white shadow-md py-4">
+    <div class="container mx-auto flex justify-between items-center">
+      <h1 class="text-2xl font-bold">Search Header</h1>
+      <div class="flex items-center space-x-4">
+        <form class="relative">
+          <input type="text" placeholder="Search..." class="pl-8 pr-4 py-2 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+          <svg class="w-5 h-5 text-gray-500 absolute left-2 top-1/2 transform -translate-y-1/2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+        </form>
+        <nav>
+          <ul class="flex space-x-4">
+            <li><a href="#" class="hover:text-gray-600">Home</a></li>
+            <li><a href="#" class="hover:text-gray-600">About</a></li>
+            <li><a href="#" class="hover:text-gray-600">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+  
+</body>
+</html>
