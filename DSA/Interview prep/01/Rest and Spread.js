@@ -42,3 +42,32 @@ console.log(sum(1, 2, 3, 4, 5)); // Output: 15
 // You can also use this function with any number of arguments:
 console.log(sum(10, 20, 30)); // Output: 60
 console.log(sum(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)); // Output: 55
+
+//Infinity
+
+console.log(Number.POSITIVE_INFINITY);
+
+console.log(Number.NEGATIVE_INFINITY);
+
+let array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+console.log(Math.max(...arr, Infinity));
+console.log(Math.min(...arr, Infinity));
+
+console.log(9e4);
+
+console.log(9e-4);
+console.log(-9e400);
+console.log(1/0);
+
+//NAN - Not a Number is a special value in the Number data type that indicates an invalid or unreliable numeric result.
+
+console.log(NaN === NaN); // false
+console.log(isNaN(NaN)); // true
+console.log(isNaN(37)); // false
+console.log(isNaN("37")); // false
+console.log(isNaN("")); // false
+console.log(isNaN("blabla")); // true
+
+let a = 5;
+let b = 10;
+console.log(a*b);
