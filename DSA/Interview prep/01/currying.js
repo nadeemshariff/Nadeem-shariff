@@ -68,7 +68,7 @@ console.log(iterator.next());
 let obj = {
     start: 10,
     end: 15,
-    [Symbol.iterator]: (){
+    [Symbol.iterator]: ()=> {
         // let current = this.start
         return {
             next(){
