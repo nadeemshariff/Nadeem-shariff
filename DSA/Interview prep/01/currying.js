@@ -33,3 +33,57 @@ console.log(getPrice(10));
 const getDiscount = PriceCalc(10);
 
 console.log(getDiscount(10)); 
+
+
+//Iterator
+
+const arr = [1, 2, 3, 4];
+
+const iterator = arr[Symbol.iterator]();
+console.log(iterator); 
+
+console.log(iterator.next());
+console.log(iterator.next());
+console.log(iterator.next());
+console.log(iterator.next());
+console.log(iterator.next());
+
+// let obj = {
+//     start: 10,
+//     end: 15
+// }
+// obj[Symbol.iterator] = function(){
+//     let current = this.start
+//     return {
+//         next(){
+//             if(obj.start <= obj.end){ // this represents obj
+//                 return {value: obj.start++, done: false}
+//             }
+//             return {done: true}
+//         }
+//     }
+//     // return itr;
+// }
+
+let obj = {
+    start: 10,
+    end: 15,
+    [Symbol.iterator]: (){
+        // let current = this.start
+        return {
+            next(){
+                if(obj.start <= obj.end){ // this represents obj
+                    return {value: obj.start++, done: false}
+                }
+                return {done: true}
+            }
+        }
+        // return itr;
+    }
+    
+}
+
+
+for (let i of obj) {
+    console.log(i) 
+}
