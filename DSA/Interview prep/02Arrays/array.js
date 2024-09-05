@@ -269,3 +269,10 @@ console.log(allPositive); // Output: true
 // Checking if any element satisfies a condition
 const hasEven = numbers.some(num => num % 2 === 0);
 console.log(hasEven); // Output: true
+
+
+let Arr = [2500,4000,69887,1156,21546];
+const val = Arr.filter((element)=> {
+    return element > 5000;
+})
+console.log(val);
