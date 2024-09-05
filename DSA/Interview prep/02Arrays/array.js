@@ -276,3 +276,43 @@ const val = Arr.filter((element)=> {
     return element > 5000;
 })
 console.log(val);
+
+//Map() Method
+
+let ARR = [1,2,3,4,5];
+let newArr = ARR.map((elem,index,array)=>{
+    return elem*index;
+});
+console.log(newArr);
+
+let Array1 = ["A","BC","CDE",];
+let newArray = Array1.map((elem,index)=> {
+    return elem.length
+});
+console.log(newArray);
+
+//Find the Square root of every element & Store it in a new Array
+let sqr = [222,444,666,888,999];
+let newSqr = sqr.map((elem,index)=>{
+    return Math.sqrt(elem);
+});
+console.log(newSqr);
+
+// Fetch all the "pName: " in a separate array?
+const data = [
+    { pName: "Product 1", pDesc: "Description 1" },
+    { pName: "Product 2", pDesc: "Description 2" },
+    { pName: "Product 3", pDesc: "Description 3" },
+  ];
+
+  const productNames = data.map((elem,index)=>{
+      return elem.pName;
+  });
+  console.log(productNames);
+
+  
+  const obj = { 
+    pName: "Product 1", pDesc: "Description 1",
+};
+const pNames = Object.values(obj).filter(val => val.startsWith("pName: "));
+console.log(pNames);
