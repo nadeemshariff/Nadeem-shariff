@@ -219,3 +219,53 @@ console.log(foundIndex); // Output: 0
 const sum = colors.length * (colors[0] ? colors[0].length : 0);
 console.log(sum); // Output: 20
 // Explanation: Since all colors are "black", we can multiply the length of the array by the length of "black"
+
+// Example of the filter method
+const numbers = [1, 2, 3, 4, 5, 6];
+const evenNumbers = numbers.filter(num => num % 2 === 0);
+console.log(evenNumbers); // Output: [2, 4, 6]
+
+// Example of the flat method
+const nestedArray = [1, [2, 3], [4, [5, 6]]];
+const flatArray = nestedArray.flat(2);
+console.log(flatArray); // Output: [1, 2, 3, 4, 5, 6]
+
+// Example of the flatMap method
+const sentences = ["Hello world", "How are you"];
+const words = sentences.flatMap(sentence => sentence.split(" "));
+console.log(words); // Output: ["Hello", "world", "How", "are", "you"]
+
+// Spread operator with arrays
+const arr1 = [1, 2, 3];
+const arr2 = [4, 5, 6];
+const combined = [...arr1, ...arr2];
+console.log(combined); // Output: [1, 2, 3, 4, 5, 6]
+
+// Destructuring arrays
+const [first, second, ...rest] = combined;
+console.log(first, second, rest); // Output: 1 2 [3, 4, 5, 6]
+
+// Array.from with mapping function
+const squaredNumbers = Array.from(numbers, x => x * x);
+console.log(squaredNumbers); // Output: [1, 4, 9, 16, 25, 36]
+
+// Creating an array with a specific length and fill value
+const filledArray = new Array(5).fill(0);
+console.log(filledArray); // Output: [0, 0, 0, 0, 0]
+
+// Using reduce for more complex operations
+const totalSum = numbers.reduce((acc, curr) => acc + curr, 0);
+console.log(totalSum); // Output: 21
+
+// Finding the maximum value in an array
+const max = Math.max(...numbers);
+console.log(max); // Output: 6
+
+// Checking if all elements satisfy a condition
+
+const allPositive = numbers.every(num => num > 0);
+console.log(allPositive); // Output: true
+
+// Checking if any element satisfies a condition
+const hasEven = numbers.some(num => num % 2 === 0);
+console.log(hasEven); // Output: true
