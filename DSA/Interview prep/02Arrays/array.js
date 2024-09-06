@@ -316,3 +316,16 @@ const data = [
 };
 const pNames = Object.values(obj).filter(val => val.startsWith("pName: "));
 console.log(pNames);
+
+//Reduce Method
+
+const num = [2,4,6,8,10];
+let result = num.reduce((accumulator,current,index,array) => {
+    // return accumulator*current;
+    accumulator += current;
+    if (index === array.length-1) {
+        return accumulator/array.length;
+    }
+    return accumulator;
+});
+console.log(result);
