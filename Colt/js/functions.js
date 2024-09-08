@@ -129,4 +129,68 @@ if (true) {
 }
 // console.log(a)
 // console.log(b)
-console.log(c)
+console.log(c);
+
+
+//Scope
+function outerFunction() {
+    let x = 10;
+
+    function innerFunction() {
+        let y = 20;
+        console.log(x + y);
+    }
+
+    innerFunction();
+}
+
+outerFunction();
+
+
+//Block Scope
+
+{
+    let blockVar = "I'm block-scoped";
+    const blockConst = "I'm also block-scoped";
+    
+    console.log(blockVar);
+    console.log(blockConst);
+}
+
+// console.log(blockVar); // This would cause a ReferenceError
+// console.log(blockConst); // This would also cause a ReferenceError
+
+if (true) {
+    let ifBlockVar = "I'm scoped to this if block";
+    console.log(ifBlockVar);
+}
+
+// console.log(ifBlockVar); // This would cause a ReferenceError
+
+for (let i = 0; i < 3; i++) {
+    let forBlockVar = "I'm scoped to this for loop";
+    console.log(forBlockVar);
+}
+
+// console.log(forBlockVar); // This would cause a ReferenceError
+// console.log(i); // This would also cause a ReferenceError
+
+//Example
+// Function declaration: Defines a function named 'addNumbers' that takes two parameters 'num1' and 'num2'
+function addNumbers(num1, num2) {
+    // Declares a constant variable 'sum' and assigns it the value of num1 + num2
+    const sum = num1 + num2;
+
+    // Conditional statement: Checks if the sum is greater than 10
+    if (sum > 10) {
+        // If sum > 10, declares a block-scoped constant 'message' with a string value
+        const message = "The sum is greater than 10";
+        // Logs the 'message' to the console
+        console.log(message);
+    }
+    // This line is commented out because 'message' is not accessible outside the if block
+    // console.log(message); // ReferenceError: message is not defined
+}
+
+// Function call: Invokes the 'addNumbers' function with arguments 8 and 9
+addNumbers(8, 9);
