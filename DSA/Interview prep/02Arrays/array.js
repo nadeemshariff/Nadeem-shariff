@@ -329,3 +329,95 @@ let result = num.reduce((accumulator,current,index,array) => {
     return accumulator;
 });
 console.log(result);
+
+
+let newArray2 = [
+    [29,87],
+    [45,56],
+    [23,89],
+    [87,67]
+  ]
+  let FlatenedArray = newArray2.reduce((acc,currval) => {
+    return acc.concat(currval);
+  }, []);
+  
+  console.log(FlatenedArray);
+  
+  const leastSum = FlatenedArray.reduce((min, num, index, arr) => {
+    if (index % 2 === 0 && index < arr.length - 1) {
+      return Math.min(min, num + arr[index + 1]);
+    }
+    return min;
+  }, Infinity);
+  
+  const highestSum = FlatenedArray.reduce((max, num, index, arr) => {
+    if (index % 2 === 0 && index < arr.length - 1) {
+      return Math.max(max, num + arr[index + 1]);
+    }
+    return max;
+  }, -Infinity);
+  
+  console.log("Least possible sum:", leastSum);
+  console.log("Highest possible sum:", highestSum);
+  
+  //Get sum of a key field of an object literal
+  
+  const students = [
+    { name: "John", score: 80 },
+    { name: "Jane", score: 90 },
+    { name: "Mark", score: 75 }
+  ];
+  const totalScore = students
+    .map((student) => student.score)
+    .reduce((total, score) => total + score, 0);
+  console.log(totalScore);
+  
+  //Sorting an array
+  
+  const sortedArray = FlatenedArray.sort((a,b) => a - b);
+  console.log(sortedArray);
+  
+  
+  let newNum = [11,12,5,63,79,45];
+  // every first two numbers should be added and stored in a new array and loop throughout the arrray and all the new values are stored in a new Array and result it out.
+   
+  // const addedArray = [];
+  // for (let i = 0; i < newNum.length - 1; i++) {
+  //   addedArray.push(newNum[i] + newNum[i + 1]);
+  // }
+  // const resultArray = addedArray.map((num, index) => num + addedArray[index + 1]);
+  // console.log(resultArray);
+  
+  let price = [25, 10, 5, 100, 20, 50, 10];
+  
+  price.sort((a,b) =>{
+    if(a < b){
+      return -1;
+    }
+    if(a > b){
+      return 1;
+    }
+    if(a == 0){
+    return 0;
+    }
+  });
+  const result2 = [...price];
+  console.log(result2);
+  console.log(price);
+
+
+//Array Destructuring
+
+let DesArr = [1, 2, 3, 4, 5];
+
+let a,b,c,d = DesArr;
+
+console.log(a,b,c,d);
+
+function destructuringArray(arr) {
+    let [a, b, c, d] = arr;
+    console.log(a, b, c, d);
+  }
+  
+  destructuringArray(DesArr);
+  
