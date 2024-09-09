@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        :root {
+            --light-bg: #f9f9f9;
+            --light-text: #222;
+            --dark-bg: #222;
+            --dark-text: #f9f9f9;
+            --light-dark: var(--light-bg);
+            --text-light-dark: var(--light-text);
+        }
+    
+        [data-theme="dark"] {
+            --light-dark: var(--dark-bg);
+            --text-light-dark: var(--dark-text);
+        }
+    
+        .theme-toggle {
+            position: relative;
+            display: inline-block;
+            width: 50px;
+            height: 25px;
+            background: var(--light-dark);
+            border-radius: 50px;
+            transition: background 0.3s ease;
+        }
+    
+        .theme-toggle::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 50%;
+            height: 100%;
+            background: var(--text-light-dark);
+            border-radius: 50px 0 0 50px;
+            transition: transform 0.3s ease;
+        }
+    
+        .theme-toggle:checked::before {
+            transform: translateX(100%);
+        }
+    </style>
+    
+    <button class="theme-toggle" id="themeToggle" data-theme="dark"></button>
+    <script>
+        const themeToggle = document.getElementById('themeToggle');
+        themeToggle.addEventListener('click', (e) => {
+            e.target.setAttribute('data-theme', e.target.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+        });
+    </script>
+    
+</body>
+</html>
