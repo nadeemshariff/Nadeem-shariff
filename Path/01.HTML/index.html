@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete HTML Documentation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1, h2, h3 {
+            color: #2c3e50;
+        }
+        code {
+            background-color: #f4f4f4;
+            padding: 2px 4px;
+            border-radius: 4px;
+        }
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 4px;
+            overflow-x: auto;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Complete HTML Documentation</h1>
+    </header>
+    <nav>
+        <h2>Table of Contents</h2>
+        <ul>
+            <li><a href="#introduction">Introduction</a></li>
+            <li><a href="#structure">HTML Document Structure</a></li>
+            <li><a href="#text-elements">Text Elements</a></li>
+            <li><a href="#links">Links</a></li>
+            <li><a href="#images">Images</a></li>
+            <li><a href="#lists">Lists</a></li>
+            <li><a href="#tables">Tables</a></li>
+            <li><a href="#forms">Forms</a></li>
+            <li><a href="#semantic-elements">Semantic Elements</a></li>
+            <li><a href="#multimedia">Multimedia</a></li>
+            <li><a href="#meta-tags">Meta Tags</a></li>
+            <li><a href="#attributes">Global Attributes</a></li>
+            <li><a href="#entities">HTML Entities</a></li>
+            <li><a href="#best-practices">Best Practices</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section id="introduction">
+            <h2>Introduction to HTML</h2>
+            <p>HTML (HyperText Markup Language) is the standard markup language for creating web pages. It describes the structure of a web page using a series of elements enclosed in tags.</p>
+        </section>
+
+        <section id="structure">
+            <h2>HTML Document Structure</h2>
+            <p>Every HTML document should have the following basic structure:</p>
+            <pre><code>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Page Title</title>
+</head>
+<body>
+    <!-- Your content goes here -->
+</body>
+</html>
+            </code></pre>
+            <p>Explanation of each part:</p>
+            <ul>
+                <li><code>&lt;!DOCTYPE html&gt;</code>: Declares that this is an HTML5 document</li>
+                <li><code>&lt;html&gt;</code>: The root element of the HTML page</li>
+                <li><code>&lt;head&gt;</code>: Contains meta information about the document</li>
+                <li><code>&lt;meta charset="UTF-8"&gt;</code>: Specifies the character encoding for the document</li>
+                <li><code>&lt;meta name="viewport"&gt;</code>: Ensures proper rendering on mobile devices</li>
+                <li><code>&lt;title&gt;</code>: Specifies a title for the document</li>
+                <li><code>&lt;body&gt;</code>: Contains the visible page content</li>
+            </ul>
+        </section>
+
+        <section id="text-elements">
+            <h2>Text Elements</h2>
+            <h3>Headings</h3>
+            <p>HTML provides six levels of headings:</p>
+            <pre><code>
+<h1>This is a heading 1</h1>
+<h2>This is a heading 2</h2>
+<h3>This is a heading 3</h3>
+<h4>This is a heading 4</h4>
+<h5>This is a heading 5</h5>
+<h6>This is a heading 6</h6>
+            </code></pre>
+
+            <h3>Paragraphs</h3>
+            <pre><code>
+<p>This is a paragraph of text.</p>
+            </code></pre>
+
+            <h3>Text Formatting</h3>
+            <pre><code>
+<strong>This text is bold</strong>
+<em>This text is italicized</em>
+<u>This text is underlined</u>
+<s>This text is strikethrough</s>
+<mark>This text is highlighted</mark>
+<small>This text is smaller</small>
+<sub>This is subscript</sub>
+<sup>This is superscript</sup>
+            </code></pre>
+
+            <h3>Line Breaks and Horizontal Rules</h3>
+            <pre><code>
+This is a line of text.<br>
+This is on a new line.
+
+<hr>
+            </code></pre>
+        </section>
+
+        <section id="links">
+            <h2>Links</h2>
+            <p>Links are created using the <code>&lt;a&gt;</code> tag:</p>
+            <pre><code>
+<a href="https://www.example.com">This is a link</a>
+<a href="https://www.example.com" target="_blank">This link opens in a new tab</a>
+<a href="#section-id">This is an internal link</a>
+<a href="mailto:example@example.com">This is an email link</a>
+            </code></pre>
+        </section>
+
+        <section id="images">
+            <h2>Images</h2>
+            <p>Images are inserted using the <code>&lt;img&gt;</code> tag:</p>
+            <pre><code>
+<img src="image.jpg" alt="Description of the image">
+<img src="image.jpg" alt="Description of the image" width="300" height="200">
+            </code></pre>
+            <p>The <code>alt</code> attribute provides alternative text for screen readers and is displayed if the image fails to load.</p>
+        </section>
+
+        <section id="lists">
+            <h2>Lists</h2>
+            <h3>Unordered List</h3>
+            <pre><code>
+<ul>
+    <li>Item 1</li>
+    <li>Item 2</li>
+    <li>Item 3</li>
+</ul>
+            </code></pre>
+
+            <h3>Ordered List</h3>
+            <pre><code>
+<ol>
+    <li>First item</li>
+    <li>Second item</li>
+    <li>Third item</li>
+</ol>
+            </code></pre>
+
+            <h3>Definition List</h3>
+            <pre><code>
+<dl>
+    <dt>Term 1</dt>
+    <dd>Definition 1</dd>
+    <dt>Term 2</dt>
+    <dd>Definition 2</dd>
+</dl>
+            </code></pre>
+        </section>
+
+        <section id="tables">
+            <h2>Tables</h2>
+            <p>Tables are created using <code>&lt;table&gt;</code>, <code>&lt;tr&gt;</code>, <code>&lt;th&gt;</code>, and <code>&lt;td&gt;</code> tags:</p>
+            <pre><code>
+<table>
+    <thead>
+        <tr>
+            <th>Header 1</th>
+            <th>Header 2</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Row 1, Cell 1</td>
+            <td>Row 1, Cell 2</td>
+        </tr>
+        <tr>
+            <td>Row 2, Cell 1</td>
+            <td>Row 2, Cell 2</td>
+        </tr>
+    </tbody>
+</table>
+            </code></pre>
+        </section>
+
+        <section id="forms">
+            <h2>Forms</h2>
+            <p>Forms allow users to input data:</p>
+            <pre><code>
+<form action="/submit-form" method="post">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required>
+    
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+    
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required>
+    
+    <label for="gender">Gender:</label>
+    <select id="gender" name="gender">
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+        <option value="other">Other</option>
+    </select>
+    
+    <fieldset>
+        <legend>Choose your favorite color:</legend>
+        <input type="radio" id="red" name="color" value="red">
+        <label for="red">Red</label>
+        <input type="radio" id="blue" name="color" value="blue">
+        <label for="blue">Blue</label>
+        <input type="radio" id="green" name="color" value="green">
+        <label for="green">Green</label>
+    </fieldset>
+    
+    <label for="message">Message:</label>
+    <textarea id="message" name="message" rows="4" cols="50"></textarea>
+    
+    <input type="checkbox" id="subscribe" name="subscribe" value="yes">
+    <label for="subscribe">Subscribe to newsletter</label>
+    
+    <button type="submit">Submit</button>
+    <button type="reset">Reset</button>
+</form>
+            </code></pre>
+        </section>
+
+        <section id="semantic-elements">
+            <h2>Semantic Elements</h2>
+            <p>Semantic elements provide meaning to the structure of a web page:</p>
+            <pre><code>
+<header>
+    <h1>Website Title</h1>
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <article>
+        <h2>Article Title</h2>
+        <p>Article content goes here.</p>
+    </article>
+    
+    <aside>
+        <h3>Related Links</h3>
+        <ul>
+            <li><a href="#">Link 1</a></li>
+            <li><a href="#">Link 2</a></li>
+        </ul>
+    </aside>
+</main>
+
+<footer>
+    <p>&copy; 2023 Your Website. All rights reserved.</p>
+</footer>
+            </code></pre>
+        </section>
+
+        <section id="multimedia">
+            <h2>Multimedia</h2>
+            <h3>Audio</h3>
+            <pre><code>
+<audio controls>
+    <source src="audio.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+</audio>
+            </code></pre>
+
+            <h3>Video</h3>
+            <pre><code>
+<video width="320" height="240" controls>
+    <source src="video.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
+            </code></pre>
+
+            <h3>Iframe</h3>
+            <pre><code>
+<iframe src="https://www.example.com" width="600" height="400"></iframe>
+            </code></pre>
+        </section>
+
+        <section id="meta-tags">
+            <h2>Meta Tags</h2>
+            <p>Meta tags provide metadata about the HTML document:</p>
+            <pre><code>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A brief description of your page">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <meta name="author" content="Your Name">
+    <meta http-equiv="refresh" content="30">
+</head>
+            </code></pre>
+        </section>
+
+        <section id="attributes">
+            <h2>Global Attributes</h2>
+            <p>Global attributes can be used on any HTML element:</p>
+            <table>
+                <tr>
+                    <th>Attribute</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>class</td>
+                    <td>Specifies one or more class names for an element</td>
+                </tr>
+                <tr>
+                    <td>id</td>
+                    <td>Specifies a unique id for an element</td>
+                </tr>
+                <tr>
+                    <td>style</td>
+                    <td>Specifies an inline CSS style for an element</td>
+                </tr>
+                <tr>
+                    <td>title</td>
+                    <td>Specifies extra information about an element</td>
+                </tr>
+                <tr>
+                    <td>lang</td>
+                    <td>Specifies the language of the element's content</td>
+                </tr>
+                <tr>
+                    <td>dir</td>
+                    <td>Specifies the text direction for the content in an element</td>
+                </tr>
+                <tr>
+                    <td>tabindex</td>
+                    <td>Specifies the tabbing order of an element</td>
+                </tr>
+                <tr>
+                    <td>hidden</td>
+                    <td>Specifies that an element is not yet, or is no longer, relevant</td>
+                </tr>
+            </table>
+        </section>
+
+        <section id="entities">
+            <h2>HTML Entities</h2>
+            <p>HTML entities are used to display reserved characters in HTML:</p>
+            <table>
+                <tr>
+                    <th>Character</th>
+                    <th>Entity Name</th>
+                    <th>Entity Number</th>
+                </tr>
+                <tr>
+                    <td>&lt;</td>
+                    <td>&amp;lt;</td>
+                    <td>&amp;#60;</td>
+                </tr>
+                <tr>
+                    <td>&gt;</td>
+                    <td>&amp;gt;</td>
+                    <td>&amp;#62;</td>
+                </tr>
+                <tr>
+                    <td>&amp;</td>
+                    <td>&amp;amp;</td>
+                    <td>&amp;#38;</td>
+                </tr>
+                <tr>
+                    <td>"</td>
+                    <td>&amp;quot;</td>
+                    <td>&amp;#34;</td>
+                </tr>
+                <tr>
+                    <td>'</td>
+                    <td>&amp;apos;</td>
+                    <td>&amp;#39;</td>
+                </tr>
+                <tr>
+                </tr>
+                <tr>
+                    <td>©</td>
+                    <td>&amp;copy;</td>
+                    <td>&amp;#169;</td>
+                </tr>
+                <tr>
+                    <td>®</td>
+                    <td>&amp;reg;</td>
+                    <td>&amp;#174;</td>
+                </tr>
+            </table>
+        </section>
+
+        <section id="best-practices">
+            <h2>HTML Best Practices</h2>
+            <ul>
+                <li>Always declare the document type with <code>&lt;!DOCTYPE html&gt;</code></li>
+                <li>Use lowercase for element names and attributes</li>
+                <li>Close all HTML elements</li>
+                <li>Use meaningful and descriptive names for <code>id</code> and <code>class</code> attributes</li>
+                <li>Use semantic elements to structure your page</li>
+                <li>Validate your HTML using the W3C Markup Validation Service</li>
+                <li>Use <code>alt</code> attributes for images</li>
+                <li>Optimize your code for accessibility</li>
+                <li>Keep your code clean and well-indented for readability</li>
+                <li>Use comments to explain complex code sections</li>
+            </ul>
+        </section>
+
+        <section id="conclusion">
+            <h2>Conclusion</h2>
+            <p>This documentation covers the fundamental aspects of HTML. As you continue to learn and practice, you'll discover more advanced techniques and best practices. Remember to stay updated with the latest HTML specifications and browser compatibility issues.</p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2023 HTML Documentation. All rights reserved.</p>
+    </footer>
+</body>
+</html>
