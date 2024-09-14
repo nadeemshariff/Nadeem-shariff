@@ -343,15 +343,15 @@ debouncedLog("World");
 // --------------------------------------------------------------------------------
 
 // 1. Basic HOF: Function that takes a function as an argument
-const applyOperation = (x, y, operation) => {
+const applyOperation1 = (x, y, operation) => {
     return operation(x, y);
   };
   
   const add2 = (a, b) => a + b;
   const multiply2 = (a, b) => a * b;
   
-  console.log(applyOperation(5, 3, add2)); // Output: 8
-  console.log(applyOperation(5, 3, multiply2)); // Output: 15
+  console.log(applyOperation1(5, 3, add2)); // Output: 8
+  console.log(applyOperation1(5, 3, multiply2)); // Output: 15
   
   // 2. HOF that returns a function (Closure)
   const multiplier = (factor) => {
@@ -406,13 +406,13 @@ const applyOperation = (x, y, operation) => {
   console.log(sum2); // Output: 15
   
   // 6. Function composition
-  const compose = (...fns) => (x) => fns.reduceRight((y, f) => f(y), x);
+  const compose1 = (...fns) => (x) => fns.reduceRight((y, f) => f(y), x);
   
   const addOne2 = (x) => x + 1;
   const double3 = (x) => x * 2;
   const square2 = (x) => x * x;
   
-  const composedFunction2 = compose(square2, double3, addOne2);
+  const composedFunction2 = compose1(square2, double3, addOne2);
   console.log(composedFunction2(3)); // Output: 64 ((3 + 1) * 2)^2
   
   // 7. Currying
