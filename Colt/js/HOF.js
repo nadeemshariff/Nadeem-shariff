@@ -472,7 +472,7 @@ console.log(curriedAdd3(1)(2)(3)); // Output: 6
   console.log(sayHello("John")); // Output: Hello, John!
   
   // 10. Debounce function
-  const debounce = (fn, delay) => {
+  const debounce2 = (fn, delay) => {
     let timeoutId;
     return (...args) => {
       clearTimeout(timeoutId);

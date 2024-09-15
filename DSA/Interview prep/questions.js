@@ -7,7 +7,7 @@ const obj1 = { key: 'value' };
 
 // 2. Constructor function
 function Person(name) {
-  this.name = name;
+  this.name = name; 
 }
 const person1 = new Person('John');
 
