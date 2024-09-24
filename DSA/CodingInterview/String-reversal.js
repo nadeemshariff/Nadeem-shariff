@@ -37,5 +37,5 @@ function reverse1(str){
     // debugger;
     return str.split('').reduce((reversed, character) => character + reversed, '');
 }
-reverse1('asdfg')
+// reverse1('asdfg') 
 console.log(reverse1('1234315')); 
