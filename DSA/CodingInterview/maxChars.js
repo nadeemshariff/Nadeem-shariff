@@ -26,6 +26,29 @@ console.log(maxChars('nsaknfakn'));
 
 // 2nd method
 
-function maxCharacter(){
-    
+function findMaxChar(str) {
+    // Step 1: Create an object to store the frequency of each character
+    const charMap = {};
+
+    // Step 2: Iterate through the string and update the frequency of each character
+    for (let char of str) {
+        charMap[char] = charMap[char] + 1 || 1;
+    }
+
+    // Step 3: Find the character with the maximum frequency
+    let maxChar = '';
+    let maxCount = 0;
+    for (let char in charMap) {
+        if (charMap[char] > maxCount) {
+            maxCount = charMap[char];
+            maxChar = char;
+        }
+    }
+
+    return maxChar;
 }
+
+// Example usage:
+const inputString = "javascript";
+const maxChar = findMaxChar(inputString);
+console.log(`The maximum occurring character is: ${maxChar}`);
