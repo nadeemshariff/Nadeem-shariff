@@ -10,4 +10,13 @@ function findVowels(str) {
     return count;
 }
 
-console.log(findVowels("hello"))
+console.log(findVowels("ajbsdfqwoiefb"));
+
+// Traditional method with regular expression rather iteration
+
+function FindVowels(str) {
+    const regex = /[aeiou]/gi;
+    return str.match(regex).length;
+}
+
+console.log(FindVowels("hello"))
