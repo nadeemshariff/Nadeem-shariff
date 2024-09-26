@@ -75,3 +75,49 @@ function printing(n){
     }
 }
 printing(10);
+
+// Pyramids
+
+function pyramids(n){
+    for (let i = 1; i <= n; i++){
+        let str = '';
+        for (let j = 1; j <= i; j++){
+            str += '*';
+        }
+        console.log(str);
+    }
+}
+pyramids(5);
+
+//
+
+function Pyramid(n) {
+  for (var i = 1; i <= n; i++) {
+      var str = '';
+      
+      // Add leading spaces
+      for (var j = 1; j <= n - i; j++) {
+          str += ' ';
+      }
+      
+      // Add stars
+      for (var k = 1; k <= (2 * i - 1); k++) {
+          str += '*';
+      }
+      
+      console.log(str);
+  }
+}
+
+// Example usage:
+Pyramid(5);
+function printPyramid(rows) {
+  for (let i = 1; i <= rows; i++) {
+      let str = ' '.repeat(rows - i);
+      let str2 = '*'.repeat(i * 2 - 1);
+      console.log(str + str2 + str);
+  }
+}
+
+// Example usage:
+printPyramid(5);
