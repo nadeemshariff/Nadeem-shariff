@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Box Model Example</title>
+    <style>
+        .box {
+            width: 300px;
+            height: 200px;
+            padding: 20px;
+            border: 5px solid #333;
+            margin: 30px;
+            background-color: #f0f0f0;
+        }
+        .content {
+            background-color: #fff;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <h1>CSS Box Model Example</h1>
+    <div class="box">
+        <div class="content">
+            <p>This is the content area.</p>
+            <p>The box model consists of:</p>
+            <ul>
+                <li>Content</li>
+                <li>Padding</li>
+                <li>Border</li>
+                <li>Margin</li>
+            </ul>
+        </div>
+    </div>
+    <p>The outer box represents the total space taken by the element, including margin.</p>
+    <p>The inner box represents the element's content, padding, and border.</p>
+    
+        <h2>Inline vs Block-level Elements</h2>
+        <style>
+            .inline-example {
+                background-color: #ffcccc;
+                padding: 5px;
+                margin: 5px;
+            }
+            .block-example {
+                background-color: #ccffcc;
+                padding: 10px;
+                margin: 10px 0;
+                width: 300px;
+            }
+        </style>
+        <p>
+            <strong>Inline elements</strong> flow within the text and do not start on a new line. Examples include 
+            <span class="inline-example"><span></span>, 
+            <span class="inline-example"><a></span>, and 
+            <span class="inline-example"><strong></span>.
+        </p>
+        <p>
+            <strong>Block-level elements</strong> start on a new line and take up the full width available. Examples include:
+        </p>
+        <div class="block-example"><div></div>
+        <p class="block-example"><p></p>
+        <h3 class="block-example"><h1> to <h6></h3>
+        <p>Notice how block-level elements stack vertically and take up the full width, while inline elements flow within the text.</p>
+    
+</body>
+</html>
