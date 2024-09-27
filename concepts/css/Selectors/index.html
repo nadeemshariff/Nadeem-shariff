@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selectors</title>
+    <style>
+        p{
+            font-size: 16px;
+            margin: 10px 20px 15px 20px;
+            padding: 1px 2px;
+        }
+        /* Descendent Selector */
+        article p {
+            font-style: italic;
+            background-color: #1a1a1a;
+            color:  aliceblue;
+            padding: 10px;
+        }
+        /* Child Selector */
+        div > p {
+            background-color: rgb(23, 112, 112);
+        }
+        p::first-letter{
+            font-size: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <header id="header">This is the header</header>
+
+    <main>
+
+        <h1>Selectors</h1>
+        <p>Selectors are used to select HTML elements based on their CSS properties. Selectors can be used to style elements with different properties.</p>
+
+        <h2>Common Selectors</h2>
+        <ul>
+            <li><strong>Element Selector:</strong> Selects all elements of a specific type (e.g., p, div, h1).</li>
+            <li class="class"><strong>Class Selector:</strong> Selects elements with a specific class attribute (e.g., .classname).</li>
+            <li id="id"><strong>ID Selector:</strong> Selects a single element with a specific id attribute (e.g., #idname).</li>
+            <li><strong>Attribute Selector:</strong> Selects elements based on their attributes or attribute values (e.g., [attribute], [attribute="value"]).</li>
+            <li><strong>Descendant Selector:</strong> Selects elements that are descendants of another element (e.g., div p).</li>
+            <li><strong>Child Selector:</strong> Selects elements that are direct children of another element (e.g., ul > li).</li>
+            <li><strong>Pseudo-classes:</strong> Selects elements based on their state or condition (e.g., :hover, :focus).</li>
+        </ul>
+        <article>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus porro beatae corrupti recusandae nulla totam quis dignissimos consequuntur reprehenderit debitis.
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus porro beatae corrupti recusandae nulla totam quis dignissimos consequuntur reprehenderit debitis.
+            </p>
+            <div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, esse. Dolore necessitatibus, quam et cumque molestias aspernatur sequi impedit illo?</p>
+            </div>
+        </article>
+
+    </main>
+    
+    
+        <h1>CSS Selectors</h1>
+        <p>CSS selectors are patterns used to select and style HTML elements. Here are some common types of selectors:</p>
+        <ul>
+            <li><strong>Element Selector:</strong> Selects all elements of a specific type (e.g., p, div, h1).</li>
+            <li><strong>Class Selector:</strong> Selects elements with a specific class attribute (e.g., .classname).</li>
+            <li><strong>ID Selector:</strong> Selects a single element with a specific id attribute (e.g., #idname).</li>
+            <li><strong>Attribute Selector:</strong> Selects elements based on their attributes or attribute values (e.g., [attribute], [attribute="value"]).</li>
+            <li><strong>Descendant Selector:</strong> Selects elements that are descendants of another element (e.g., div p).</li>
+            <li><strong>Child Selector:</strong> Selects elements that are direct children of another element (e.g., ul > li).</li>
+            <li><strong>Pseudo-class Selector:</strong> Selects elements based on a certain state (e.g., :hover, :first-child).</li>
+            <li><strong>Pseudo-element Selector:</strong> Selects and styles a part of an element (e.g., ::before, ::after).</li>
+        </ul>
+        <p>These selectors can be combined to create more specific and powerful selection patterns.</p>
+    
+</body>
+</html>
