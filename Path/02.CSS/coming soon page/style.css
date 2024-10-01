@@ -1,0 +1,81 @@
+/* *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+} */
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+body,html{
+    margin: 0;
+    padding: 0;
+    font-family: "Rubik", sans-serif;
+    height: 100vh;
+}
+.container {
+    background: linear-gradient(135deg, #0049e6, #4169e1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+.content{
+    text-align: center;
+    background-color: rgba(177, 78, 223, 0.8);
+    padding: 2rem;
+    border-radius: 10px;
+    max-width: 400px;
+
+}
+
+.logo{
+    width: 150px;
+    height: 75px;
+    object-fit: contain;
+}
+
+h1 {
+    color: #2e251a;
+    margin-bottom: 20px;
+    
+}
+p{
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+input[type="email"]{
+    padding: .2rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-bottom: 1rem;
+    
+}
+input[type="email"]:hover {
+    border-color: #000000;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease-in-out;
+}
+
+button{
+    padding: .5rem 1rem;
+    border-radius: 5px;
+    border: none;
+    background-color: #8a2be2;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.9s ease-in-out;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+}
+button:hover{
+    background-color: #0c0a0e;
+
+}
+svg{
+    position: absolute;
+}

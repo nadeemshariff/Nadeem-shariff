@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlexBox</title>
+</head>
+<body>
+    
+        <style>
+            .container {
+                display: flex;
+                margin-bottom: 20px;
+            }
+            .item {
+                padding: 10px;
+                margin: 5px;
+                background-color: #f0f0f0;
+            }
+        </style>
+        <h1>Flexbox Explanation and Examples</h1>
+        
+        <h2>What is Flexbox?</h2>
+        <p>Flexbox is a CSS layout module that provides a more efficient way to layout, align and distribute space among items in a container, even when their size is unknown or dynamic.</p>
+        
+        <h2>Basic Concepts</h2>
+        <ul>
+            <li><strong>Flex Container:</strong> The parent element that has <code>display: flex</code> applied to it.</li>
+            <li><strong>Flex Items:</strong> The direct children of the flex container.</li>
+            <li><strong>Main Axis:</strong> The primary axis along which flex items are laid out.</li>
+            <li><strong>Cross Axis:</strong> The axis perpendicular to the main axis.</li>
+        </ul>
+        
+        <h2>Example 1: Basic Flexbox</h2>
+        <div class="container">
+            <div class="item">Item 1</div>
+            <div class="item">Item 2</div>
+            <div class="item">Item 3</div>
+        </div>
+        
+        <h2>Example 2: Justify Content</h2>
+        <div class="container" style="justify-content: space-between;">
+            <div class="item">Item 1</div>
+            <div class="item">Item 2</div>
+            <div class="item">Item 3</div>
+        </div>
+        
+        <h2>Example 3: Align Items</h2>
+        <div class="container" style="height: 100px; align-items: center; background-color: #e0e0e0;">
+            <div class="item">Item 1</div>
+            <div class="item">Item 2</div>
+            <div class="item">Item 3</div>
+        </div>
+        
+        <h2>Project 1: Navigation Bar</h2>
+        <nav style="display: flex; justify-content: space-around; background-color: #333; padding: 10px;">
+            <a href="#" style="color: white; text-decoration: none;">Home</a>
+            <a href="#" style="color: white; text-decoration: none;">About</a>
+            <a href="#" style="color: white; text-decoration: none;">Services</a>
+            <a href="#" style="color: white; text-decoration: none;">Contact</a>
+        </nav>
+        
+        <h2>Project 2: Card Layout</h2>
+        <div style="display: flex; flex-wrap: wrap; justify-content: space-around;">
+            <div style="flex: 0 1 200px; margin: 10px; padding: 10px; border: 1px solid #ccc; border-radius: 5px;">
+                <h3>Card 1</h3>
+                <p>This is the content of card 1.</p>
+            </div>
+            <div style="flex: 0 1 200px; margin: 10px; padding: 10px; border: 1px solid #ccc; border-radius: 5px;">
+                <h3>Card 2</h3>
+                <p>This is the content of card 2.</p>
+            </div>
+            <div style="flex: 0 1 200px; margin: 10px; padding: 10px; border: 1px solid #ccc; border-radius: 5px;">
+                <h3>Card 3</h3>
+                <p>This is the content of card 3.</p>
+            </div>
+        </div>
+        
+        <h2>Project 3: Holy Grail Layout</h2>
+        <div style="display: flex; flex-direction: column; min-height: 100vh;">
+            <header style="background-color: #f0f0f0; padding: 20px; text-align: center;">
+                <h1>Header</h1>
+            </header>
+            <div style="display: flex; flex: 1;">
+                <nav style="background-color: #e0e0e0; padding: 20px; width: 200px;">
+                    <h2>Sidebar</h2>
+                    <ul>
+                        <li>Link 1</li>
+                        <li>Link 2</li>
+                        <li>Link 3</li>
+                    </ul>
+                </nav>
+                <main style="flex: 1; padding: 20px;">
+                    <h2>Main Content</h2>
+                    <p>This is the main content area of the holy grail layout.</p>
+                </main>
+                <aside style="background-color: #e0e0e0; padding: 20px; width: 200px;">
+                    <h2>Aside</h2>
+                    <p>Additional information goes here.</p>
+                </aside>
+            </div>
+            <footer style="background-color: #f0f0f0; padding: 20px; text-align: center;">
+                <p>Footer</p>
+            </footer>
+        </div>
+    
+</body>
+</body>
+</html>
