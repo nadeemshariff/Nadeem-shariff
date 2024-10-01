@@ -6,7 +6,196 @@
     <title>TailwindCSS</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    
+<body class="bg-gray-900 text-gray-100">
+     
+     <div class="min-h-screen">
+         <!-- Header -->
+         <header class="bg-gray-800 shadow-lg">
+             <nav class="container mx-auto px-4 py-4 flex items-center justify-between">
+                 <div class="flex items-center">
+                     <img src="https://tailwindcss.com/_next/static/media/tailwindcss-mark.79614a5f61617ba49a0891494521226b.svg" alt="Tailwind CSS" class="h-10 w-auto">
+                     <span class="ml-3 text-xl font-bold text-blue-400">Tailwind CSS</span>
+                 </div>
+                 <div class="hidden md:flex space-x-6">
+                     <a href="#" class="text-gray-300 hover:text-blue-400 transition duration-300 cursor-pointer hover:shadow-lg hover:shadow-blue-400/50">Docs</a>
+                     <a href="#" class="text-gray-300 hover:text-blue-400 transition duration-300 cursor-pointer hover:shadow-lg hover:shadow-blue-400/50">Components</a>
+                     <a href="#" class="text-gray-300 hover:text-blue-400 transition duration-300 cursor-pointer hover:shadow-lg hover:shadow-blue-400/50">Blog</a>
+                     <a href="#" class="text-gray-300 hover:text-blue-400 transition duration-300 cursor-pointer hover:shadow-lg hover:shadow-blue-400/50">Showcase</a>
+                 </div>
+                 <div>
+                     <a href="#" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-500 transition duration-300 transform hover:scale-105 cursor-pointer hover:shadow-lg hover:shadow-blue-400/50">Get started</a>
+                 </div>
+             </nav>
+         </header>
+     
+         <!-- Hero Section -->
+         <main class="container mx-auto px-4 py-16">
+             <div class="text-center">
+                 <h1 class="text-4xl sm:text-6xl font-extrabold text-blue-400 mb-4 animate-pulse">
+                     Rapidly build modern websites without ever leaving your HTML.
+                 </h1>
+                 <p class="text-xl text-gray-300 mb-8">
+                     A utility-first CSS framework packed with classes like flex, pt-4, text-center and rotate-90 that can be composed to build any design, directly in your markup.
+                 </p>
+                 <div class="flex justify-center space-x-4">
+                     <a href="#" class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-500 transition duration-300 transform hover:scale-105 cursor-pointer hover:shadow-lg hover:shadow-blue-400/50">Get started</a>
+                     <a href="#" class="bg-gray-700 text-gray-200 px-6 py-3 rounded-lg hover:bg-gray-600 transition duration-300 transform hover:scale-105 cursor-pointer hover:shadow-lg hover:shadow-blue-400/50">Watch video</a>
+                 </div>
+             </div>
+         </main>
+     
+         <!-- Features Section -->
+         <section class="bg-gray-800 py-16">
+             <div class="container mx-auto px-4">
+                 <h2 class="text-3xl font-bold text-center mb-12 text-blue-400">Why Tailwind CSS?</h2>
+                 <div class="grid md:grid-cols-3 gap-8">
+                     <div class="text-center p-6 bg-gray-700 rounded-lg hover:bg-gray-600 transition duration-300 transform hover:scale-105 cursor-pointer hover:shadow-lg hover:shadow-blue-400/50">
+                         <svg class="w-12 h-12 mx-auto mb-4 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                         <h3 class="text-xl font-semibold mb-2 text-blue-300">Utility-First</h3>
+                         <p class="text-gray-300">Use utility classes to build custom designs without writing CSS</p>
+                     </div>
+                     <div class="text-center p-6 bg-gray-700 rounded-lg hover:bg-gray-600 transition duration-300 transform hover:scale-105 cursor-pointer hover:shadow-lg hover:shadow-blue-400/50">
+                         <svg class="w-12 h-12 mx-auto mb-4 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path></svg>
+                         <h3 class="text-xl font-semibold mb-2 text-blue-300">Customizable</h3>
+                         <p class="text-gray-300">Easily customize the framework to match your brand</p>
+                     </div>
+                     <div class="text-center p-6 bg-gray-700 rounded-lg hover:bg-gray-600 transition duration-300 transform hover:scale-105 cursor-pointer hover:shadow-lg hover:shadow-blue-400/50">
+                         <svg class="w-12 h-12 mx-auto mb-4 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                         <h3 class="text-xl font-semibold mb-2 text-blue-300">Modern</h3>
+                         <p class="text-gray-300">Built with modern CSS features for better performance</p>
+                     </div>
+                 </div>
+             </div>
+         </section>
+
+         <!-- Testimonials Section -->
+         <section class="bg-gray-900 py-16">
+             <div class="container mx-auto px-4">
+                 <h2 class="text-3xl font-bold text-center mb-12 text-blue-400">What Developers Say</h2>
+                 <div class="grid md:grid-cols-2 gap-8">
+                     <div class="bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300 transform hover:scale-105 cursor-pointer hover:shadow-blue-400/20 testimonial">
+                         <p class="text-gray-300 mb-4">"Tailwind CSS has completely changed the way I build websites. It's so intuitive and flexible!"</p>
+                         <div class="flex items-center">
+                             <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Sarah Johnson" class="w-12 h-12 rounded-full mr-4">
+                             <div>
+                                 <h4 class="font-semibold text-blue-300">Sarah Johnson</h4>
+                                 <p class="text-gray-400">Frontend Developer</p>
+                             </div>
+                         </div>
+                     </div>
+                     <div class="bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300 transform hover:scale-105 cursor-pointer hover:shadow-blue-400/20 testimonial">
+                         <p class="text-gray-300 mb-4">"The utility-first approach of Tailwind CSS has significantly sped up my development process."</p>
+                         <div class="flex items-center">
+                             <img src="https://randomuser.me/api/portraits/men/44.jpg" alt="Mike Chen" class="w-12 h-12 rounded-full mr-4">
+                             <div>
+                                 <h4 class="font-semibold text-blue-300">Mike Chen</h4>
+                                 <p class="text-gray-400">Full Stack Developer</p>
+                             </div>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+         </section>
+
+         <!-- CTA Section -->
+         <section class="bg-blue-900 py-16">
+             <div class="container mx-auto px-4 text-center">
+                 <h2 class="text-3xl font-bold text-blue-300 mb-4">Ready to get started?</h2>
+                 <p class="text-xl text-blue-100 mb-8">Join thousands of developers using Tailwind CSS to build beautiful websites.</p>
+                 <a href="#" class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-500 transition duration-300 transform hover:scale-105 inline-block cursor-pointer hover:shadow-lg hover:shadow-blue-400/50">Start your project</a>
+             </div>
+         </section>
+
+         <!-- Footer -->
+         <footer class="bg-gray-800 text-gray-300 py-12">
+             <div class="container mx-auto px-4">
+                 <div class="grid md:grid-cols-4 gap-8">
+                     <div>
+                         <h3 class="text-lg font-semibold mb-4 text-blue-400">About</h3>
+                         <ul class="space-y-2">
+                             <li><a href="#" class="hover:text-blue-400 transition duration-300 cursor-pointer hover:shadow-lg hover:shadow-blue-400/50">Company</a></li>
+                             <li><a href="#" class="hover:text-blue-400 transition duration-300 cursor-pointer hover:shadow-lg hover:shadow-blue-400/50">Team</a></li>
+                             <li><a href="#" class="hover:text-blue-400 transition duration-300 cursor-pointer hover:shadow-lg hover:shadow-blue-400/50">Careers</a></li>
+                         </ul>
+                     </div>
+                     <div>
+                         <h3 class="text-lg font-semibold mb-4 text-blue-400">Resources</h3>
+                         <ul class="space-y-2">
+                             <li><a href="#" class="hover:text-blue-400 transition duration-300 cursor-pointer hover:shadow-lg hover:shadow-blue-400/50">Documentation</a></li>
+                             <li><a href="#" class="hover:text-blue-400 transition duration-300 cursor-pointer hover:shadow-lg hover:shadow-blue-400/50">Tutorials</a></li>
+                             <li><a href="#" class="hover:text-blue-400 transition duration-300 cursor-pointer hover:shadow-lg hover:shadow-blue-400/50">Blog</a></li>
+                         </ul>
+                     </div>
+                     <div>
+                         <h3 class="text-lg font-semibold mb-4 text-blue-400">Community</h3>
+                         <ul class="space-y-2">
+                             <li><a href="#" class="hover:text-blue-400 transition duration-300 cursor-pointer hover:shadow-lg hover:shadow-blue-400/50">GitHub</a></li>
+                             <li><a href="#" class="hover:text-blue-400 transition duration-300 cursor-pointer hover:shadow-lg hover:shadow-blue-400/50">Discord</a></li>
+                             <li><a href="#" class="hover:text-blue-400 transition duration-300 cursor-pointer hover:shadow-lg hover:shadow-blue-400/50">Twitter</a></li>
+                         </ul>
+                     </div>
+                     <div>
+                         <h3 class="text-lg font-semibold mb-4 text-blue-400">Legal</h3>
+                         <ul class="space-y-2">
+                             <li><a href="#" class="hover:text-blue-400 transition duration-300 cursor-pointer hover:shadow-lg hover:shadow-blue-400/50">Privacy Policy</a></li>
+                             <li><a href="#" class="hover:text-blue-400 transition duration-300 cursor-pointer hover:shadow-lg hover:shadow-blue-400/50">Terms of Service</a></li>
+                             <li><a href="#" class="hover:text-blue-400 transition duration-300 cursor-pointer hover:shadow-lg hover:shadow-blue-400/50">Cookie Policy</a></li>
+                         </ul>
+                     </div>
+                 </div>
+                 <div class="mt-8 pt-8 border-t border-gray-700 text-center">
+                     <p>© 2023 Tailwind CSS. All rights reserved.</p>
+                 </div>
+             </div>
+         </footer>
+     </div>
+     
+     <script>
+         document.addEventListener('DOMContentLoaded', function() {
+             const testimonials = document.querySelectorAll('.testimonial');
+             
+             testimonials.forEach(testimonial => {
+                 testimonial.addEventListener('mousemove', function(e) {
+                     const rect = testimonial.getBoundingClientRect();
+                     const x = e.clientX - rect.left;
+                     const y = e.clientY - rect.top;
+                     
+                     testimonial.style.setProperty('--x', `${x}px`);
+                     testimonial.style.setProperty('--y', `${y}px`);
+                 });
+                 
+                 testimonial.addEventListener('mouseleave', function() {
+                     testimonial.style.setProperty('--x', '50%');
+                     testimonial.style.setProperty('--y', '50%');
+                 });
+             });
+         });
+     </script>
+     
+     <style>
+         .testimonial {
+             position: relative;
+             overflow: hidden;
+         }
+         
+         .testimonial::before {
+             content: '';
+             position: absolute;
+             top: var(--y, 50%);
+             left: var(--x, 50%);
+             transform: translate(-50%, -50%);
+             width: 0;
+             height: 0;
+             background: radial-gradient(circle closest-side, rgba(59, 130, 246, 0.3), transparent);
+             transition: width 0.2s ease, height 0.2s ease;
+         }
+         
+         .testimonial:hover::before {
+             width: 200%;
+             height: 200%;
+         }
+     </style>
 </body>
+</body>
+</html>
 </html>
