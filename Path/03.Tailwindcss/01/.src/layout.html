@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <!-- <div class="grid-col-3 m-4 grid gap-4 sm:grid-cols-4">
+  <div class="min-h-[100px] rounded-lg bg-orange-500 shadow-lg"></div>
+  <div class="min-h-[100px] rounded-lg bg-amber-300 shadow-lg"></div>
+  <div class="min-h-[100px] rounded-lg bg-red-300 shadow-lg"></div>
+  <div class="min-h-[100px] rounded-lg bg-purple-300 shadow-lg"></div>
+</div> -->
+
+<!-- // Non equal section -->
+<!-- 
+<div class="grid-col-1 m-4 grid gap-4 sm:grid-cols-12 grid-cols-2">
+  <div class="sm:col-span-2 min-h-[100px] rounded-lg bg-orange-500 shadow-lg"></div>
+  <div class=" sm:col-span-10 min-h-[100px] rounded-lg bg-teal-300 shadow-lg"></div>
+</div> -->
+
+
+<!-- <div class=" m-4 grid grid-col-1 gap-4 sm:grid-cols-12">
+    <div class="sm:col-span-2 min-h-[100px] rounded-lg bg-orange-500 shadow-lg"></div>
+    <div class=" sm:col-span-10 min-h-[100px] rounded-lg bg-teal-300 shadow-lg"></div>
+    <div class=" sm:col-span-10 min-h-[100px] rounded-lg bg-purple-300 shadow-lg border"></div>
+  </div> -->
+  
+  <!-- Flexbox Layout -->
+  <div class="m-4 flex flex-col md:flex-row gap-4">
+    <div class="flex-1 min-h-[100px] rounded-lg bg-blue-500 shadow-lg"></div>
+    <div class="flex-1 min-h-[100px] rounded-lg bg-green-500 shadow-lg"></div>
+    <div class="flex-1 min-h-[100px] rounded-lg bg-yellow-500 shadow-lg"></div>
+  </div>
+  
+  <!-- Grid Layout with Responsive Columns -->
+  <div class="m-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+    <div class="min-h-[100px] rounded-lg bg-indigo-500 shadow-lg"></div>
+    <div class="min-h-[100px] rounded-lg bg-pink-500 shadow-lg"></div>
+    <div class="min-h-[100px] rounded-lg bg-cyan-500 shadow-lg"></div>
+    <div class="min-h-[100px] rounded-lg bg-emerald-500 shadow-lg"></div>
+    <div class="min-h-[100px] rounded-lg bg-fuchsia-500 shadow-lg"></div>
+    <div class="min-h-[100px] rounded-lg bg-lime-500 shadow-lg"></div>
+  </div>
+  
+  <!-- Asymmetric Grid Layout -->
+  <div class="m-4 grid grid-cols-4 gap-4">
+    <div class="col-span-4 md:col-span-2 min-h-[100px] rounded-lg bg-red-500 shadow-lg"></div>
+    <div class="col-span-2 md:col-span-1 min-h-[100px] rounded-lg bg-orange-500 shadow-lg"></div>
+    <div class="col-span-2 md:col-span-1 min-h-[100px] rounded-lg bg-amber-500 shadow-lg"></div>
+    <div class="col-span-4 min-h-[100px] rounded-lg bg-yellow-500 shadow-lg"></div>
+  </div>
+  
+  <!-- Nested Grid Layout -->
+  <div class="m-4 grid grid-cols-3 gap-4">
+    <div class="col-span-2 grid grid-cols-2 gap-4">
+      <div class="min-h-[100px] rounded-lg bg-violet-500 shadow-lg"></div>
+      <div class="min-h-[100px] rounded-lg bg-purple-500 shadow-lg"></div>
+      <div class="col-span-2 min-h-[100px] rounded-lg bg-fuchsia-500 shadow-lg"></div>
+    </div>
+    <div class="min-h-[220px] rounded-lg bg-pink-500 shadow-lg"></div>
+  </div>
+  
+</body>
+</html>
