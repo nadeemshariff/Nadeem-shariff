@@ -40,3 +40,22 @@
 
     console.log("Removed city:", lastVisitedCity);
     console.log("Updated citiesVisited array:", citiesVisited);
+
+// 6. Store 3 favorite singers in an array and log the first singer
+let favoriteSingers = ["Adele", "Ed Sheeran", "Beyoncé"];
+console.log("First favorite singer:", favoriteSingers[0]);
+
+// Create a new array with 4 favorite numbers
+let favoriteNumbers = [7, 13, 42, 99];
+
+// Create a mixed array with different data types
+let mixedArr = ["string", ["otherarray"], 123, true];
+
+// Access each item in the mixed array using [] notation
+console.log("First item (string):", mixedArr[0]);
+console.log("Second item (array):", mixedArr[1]);
+console.log("Third item (number):", mixedArr[2]);
+console.log("Fourth item (boolean):", mixedArr[3]);
+
+// Accessing the nested array
+console.log("Item in the nested array:", mixedArr[1][0]);
