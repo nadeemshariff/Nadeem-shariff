@@ -49,7 +49,7 @@ console.log("First favorite singer:", favoriteSingers[0]);
 let favoriteNumbers = [7, 13, 42, 99];
 
 // Create a mixed array with different data types
-let mixedArr = ["string", ["otherarray"], 123, true];
+let mixedArr = ["string", ["otherarray"], 123, true]; 
 
 // Access each item in the mixed array using [] notation
 console.log("First item (string):", mixedArr[0]);
