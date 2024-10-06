@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Random number generator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <div
+      class="min-h-screen bg-blue-300 flex flex-col justify-center items-center"
+    >
+      <div class="bg-indigo-400 p-8 rounded-lg shadow-md w-96">
+        <h1 class="text-3xl font-bold mb-6 text-center">
+          Random Number Generator
+        </h1>
+        <div class="mb-4">
+          <label for="min" class="block text-sm font-medium text-gray-700"
+            >Minimum:</label
+          >
+          <input
+            type="number"
+            id="min"
+            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+            value="1"
+          />
+        </div>
+        <div class="mb-4">
+          <label for="max" class="block text-sm font-medium text-gray-700"
+            >Maximum:</label
+          >
+          <input
+            type="number"
+            id="max"
+            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+            value="100"
+          />
+        </div>
+        <button
+          id="generate"
+          class="w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+        >
+          Generate Random Number
+        </button>
+        <div class="mt-6 text-center">
+          <label for="result" class="block text-sm font-medium text-gray-700"
+            >Result:</label
+          >
+          <input
+            type="text"
+            id="result"
+            class="mt-1 block w-full text-2xl font-bold text-center rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+            readonly
+          />
+        </div>
+      </div>
+    </div>
+
+    <script src="./rng.js"></script>
+  </body>
+</html>
