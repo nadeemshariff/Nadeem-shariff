@@ -1,7 +1,7 @@
 //Maps and Sets
 
 //Creating a Object
-const Object = {
+const person = {
     firstName: 'John',
     lastName: 'Doe',
 };

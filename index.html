@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Card Grid with Hover Effects</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+    margin: 0;
+    padding: 20px;
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    transition: all 0.3s ease;
+}
+
+.card-grid:hover .card:not(:hover) {
+    filter: blur(3px);
+}
+
+.card:hover {
+    transform: scale(1.05);
+    z-index: 1;
+}
+
+.card:hover :not(.card-button) {
+    transform: scale(1.05);
+}
+
+.card h2 {
+    margin-top: 0;
+    color: #333;
+}
+
+.card p {
+    color: #666;
+}
+
+.card-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.card-button:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .card-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+}
+
+@media (max-width: 480px) {
+    .card-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <div class="card-grid">
+        <div class="card">
+            <h2>Card 1</h2>
+            <p>This is some sample text for the card content.</p>
+            <button class="card-button">Click me</button>
+        </div>
+        <div class="card">
+            <h2>Card 2</h2>
+            <p>Another card with different content.</p>
+            <button class="card-button">Learn more</button>
+        </div>
+        <div class="card">
+            <h2>Card 3</h2>
+            <p>Yet another card with unique information.</p>
+            <button class="card-button">Explore</button>
+        </div>
+        <div class="card">
+            <h2>Card 4</h2>
+            <p>A fourth card to demonstrate the grid layout.</p>
+            <button class="card-button">Details</button>
+        </div>
+        <div class="card">
+            <h2>Card 5</h2>
+            <p>Fifth card showing the responsive design.</p>
+            <button class="card-button">Read more</button>
+        </div>
+        <div class="card">
+            <h2>Card 6</h2>
+            <p>Last card in our example grid.</p>
+            <button class="card-button">Get started</button>
+        </div>
+    </div>
+</body>
+</html>
