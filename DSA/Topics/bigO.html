@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Big O Notation</title>
+</head>
+<body>
+<div class="container">
+    <h1 class="animated-title">Big O Notation Visualizer</h1>
+    <p class="description">Big O notation is a mathematical notation used to describe the performance or complexity of an algorithm.</p>
+    <div class="bento-grid">
+        <div class="bento-item" id="bigOList">
+            <h2 class="animated-subtitle">Common Big O Notations</h2>
+            <button class="bigO-btn" data-complexity="O(1)">O(1)</button>
+            <button class="bigO-btn" data-complexity="O(log n)">O(log n)</button>
+            <button class="bigO-btn" data-complexity="O(n)">O(n)</button>
+            <button class="bigO-btn" data-complexity="O(n log n)">O(n log n)</button>
+            <button class="bigO-btn" data-complexity="O(n^2)">O(n^2)</button>
+            <button class="bigO-btn" data-complexity="O(2^n)">O(2^n)</button>
+            <button class="bigO-btn" data-complexity="O(n!)">O(n!)</button>
+        </div>
+        <div class="bento-item visualization">
+            <h2 class="animated-subtitle">Visual Representation</h2>
+            <canvas id="bigOChart" width="600" height="400"></canvas>
+        </div>
+        <div class="bento-item" id="explanation"></div>
+    </div>
+    <script>
+        const canvas = document.getElementById('bigOChart');
+        const ctx = canvas.getContext('2d');
+        const explanationDiv = document.getElementById('explanation');
+
+        const bigOFunctions = {
+            'O(1)': (x) => 1,
+            'O(log n)': (x) => Math.log2(x + 1),
+            'O(n)': (x) => x,
+            'O(n log n)': (x) => x * Math.log2(x + 1),
+            'O(n^2)': (x) => x * x,
+            'O(2^n)': (x) => Math.pow(2, x),
+            'O(n!)': (x) => x <= 1 ? 1 : x * bigOFunctions['O(n!)'](x - 1)
+        };
+
+        const colors = ['#FF6384', '#36A2EB', '#FFCE56', '#4BC0C0', '#9966FF', '#FF9F40', '#C9CBCF'];
+
+        function drawGraph(selectedFunction) {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.beginPath();
+            ctx.moveTo(50, 350);
+            ctx.lineTo(550, 350);
+            ctx.moveTo(50, 350);
+            ctx.lineTo(50, 50);
+            ctx.stroke();
+
+            ctx.font = '12px Arial';
+            ctx.fillText('n', 560, 355);
+            ctx.fillText('Time', 30, 40);
+
+            const maxY = 300;
+            const maxX = 500;
+
+            Object.keys(bigOFunctions).forEach((funcName, index) => {
+                ctx.beginPath();
+                ctx.moveTo(50, 350);
+                for (let x = 0; x <= maxX; x += 10) {
+                    const y = bigOFunctions[funcName](x / 10);
+                    ctx.lineTo(x + 50, Math.max(50, 350 - (y / maxY) * 300));
+                }
+                ctx.strokeStyle = colors[index];
+                ctx.stroke();
+
+                if (funcName === selectedFunction) {
+                    ctx.lineWidth = 3;
+                    ctx.strokeStyle = 'black';
+                    ctx.stroke();
+                    ctx.lineWidth = 1;
+                }
+            });
+        }
+
+        function animateGraph(selectedFunction) {
+            let progress = 0;
+            const animationDuration = 1000; // 1 second
+            const startTime = performance.now();
+
+            function animate(currentTime) {
+                progress = (currentTime - startTime) / animationDuration;
+                if (progress > 1) progress = 1;
+
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                ctx.beginPath();
+                ctx.moveTo(50, 350);
+                ctx.lineTo(550, 350);
+                ctx.moveTo(50, 350);
+                ctx.lineTo(50, 50);
+                ctx.stroke();
+
+                ctx.font = '12px Arial';
+                ctx.fillText('n', 560, 355);
+                ctx.fillText('Time', 30, 40);
+
+                const maxY = 300;
+                const maxX = 500 * progress;
+
+                ctx.beginPath();
+                ctx.moveTo(50, 350);
+                for (let x = 0; x <= maxX; x += 10) {
+                    const y = bigOFunctions[selectedFunction](x / 10);
+                    ctx.lineTo(x + 50, Math.max(50, 350 - (y / maxY) * 300));
+                }
+                ctx.strokeStyle = 'black';
+                ctx.lineWidth = 3;
+                ctx.stroke();
+                ctx.lineWidth = 1;
+
+                if (progress < 1) {
+                    requestAnimationFrame(animate);
+                } else {
+                    drawGraph(selectedFunction);
+                }
+            }
+
+            requestAnimationFrame(animate);
+        }
+
+        const explanations = {
+            'O(1)': 'Constant time complexity. The algorithm always takes the same amount of time, regardless of input size. Examples include array access by index or simple arithmetic operations.',
+            'O(log n)': 'Logarithmic time complexity. The algorithm\'s time increases logarithmically with input size. Common in divide-and-conquer algorithms like binary search or certain balanced tree operations.',
+            'O(n)': 'Linear time complexity. The algorithm\'s time increases linearly with input size. Common in simple iterative algorithms like linear search or traversing an array once.',
+            'O(n log n)': 'Linearithmic time complexity. Common in efficient sorting algorithms like mergesort and quicksort. It\'s faster than quadratic but slower than linear time.',
+            'O(n^2)': 'Quadratic time complexity. The algorithm\'s time increases quadratically with input size. Common in nested loops or simple sorting algorithms like bubble sort or insertion sort.',
+            'O(2^n)': 'Exponential time complexity. The algorithm\'s time doubles with each addition to the input. Often seen in recursive algorithms solving complex problems like the Fibonacci sequence or the Towers of Hanoi.',
+            'O(n!)': 'Factorial time complexity. The algorithm\'s time grows factorially with input size. Seen in problems like the traveling salesman problem or generating all permutations of a set.'
+        };
+
+        document.getElementById('bigOList').addEventListener('click', function(e) {
+            if (e.target.classList.contains('bigO-btn')) {
+                const selectedFunction = e.target.dataset.complexity;
+                animateGraph(selectedFunction);
+                explanationDiv.innerHTML = `<h3>${selectedFunction}</h3><p>${explanations[selectedFunction]}</p>`;
+                document.querySelectorAll('.bigO-btn').forEach(btn => btn.classList.remove('active'));
+                e.target.classList.add('active');
+            }
+        });
+
+        drawGraph();
+    </script>
+</div>
+<style>
+    body {
+        background: linear-gradient(45deg, #1a1a2e, #16213e, #0f3460);
+        animation: gradientBG 15s ease infinite;
+        background-size: 400% 400%;
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        color: #e0e0e0;
+    }
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 40px;
+    }
+    .animated-title {
+        font-size: 2.5em;
+        text-align: center;
+        margin-bottom: 20px;
+        color: #fff;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    }
+    .description {
+        text-align: center;
+        margin-bottom: 40px;
+        font-size: 1.1em;
+    }
+    .bento-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+    }
+    .bento-item {
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 15px;
+        padding: 20px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+    }
+    .bento-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    }
+    .animated-subtitle {
+        font-size: 1.5em;
+        margin-bottom: 15px;
+        color: #fff;
+    }
+    #bigOList {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    .bigO-btn {
+        padding: 10px;
+        font-size: 16px;
+        cursor: pointer;
+        background-color: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 5px;
+        transition: all 0.3s;
+        color: #fff;
+    }
+    .bigO-btn:hover, .bigO-btn.active {
+        background-color: rgba(255, 255, 255, 0.2);
+        transform: scale(1.05);
+    }
+    .visualization {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    #bigOChart {
+        max-width: 100%;
+        height: auto;
+    }
+    #explanation {
+        font-size: 0.9em;
+        line-height: 1.6;
+    }
+    @keyframes gradientBG {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+    }
+    h1, h2, h3, p {
+        transition: color 0.3s ease;
+    }
+    h1:hover, h2:hover, h3:hover, p:hover {
+        color: #ffd700;
+    }
+</style>
+
+<div id="performanceTracker">
+    <h2>Performance Tracker</h2>
+    <div class="input-group">
+        <label for="functionSelect">Select Function:</label>
+        <select id="functionSelect">
+            <option value="addToFirst">addToFirst</option>
+            <option value="addToSecond">addToSecond</option>
+            <option value="countUPandDown">countUPandDown</option>
+            <option value="printAllPairs">printAllPairs</option>
+            <option value="numberOfHalves">numberOfHalves</option>
+            <option value="totalNumberOfHalves">totalNumberOfHalves</option>
+            <option value="LogAllBinaries">LogAllBinaries</option>
+        </select>
+    </div>
+    <div class="input-group">
+        <label for="nValue">Enter n value:</label>
+        <input type="number" id="nValue" min="1" placeholder="Enter n value">
+    </div>
+    <button id="plotButton">Plot</button>
+    <div id="resultContainer">
+        <div id="codeSection">
+            <h3>Function Code</h3>
+            <pre><code id="functionCode"></code></pre>
+        </div>
+        <div id="chartSection">
+            <h3>Execution Time Chart</h3>
+            <canvas id="executionChart"></canvas>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    const functionSelect = document.getElementById('functionSelect');
+    const nValueInput = document.getElementById('nValue');
+    const plotButton = document.getElementById('plotButton');
+    const codeSection = document.getElementById('codeSection');
+    const chartSection = document.getElementById('chartSection');
+    const functionCode = document.getElementById('functionCode');
+    const executionChart = document.getElementById('executionChart');
+
+    const functions = {
+        addToFirst: (n) => {
+            let arr = [];
+            for (let i = 0; i < n; i++) {
+                arr.unshift(i);
+            }
+            return arr;
+        },
+        addToSecond: (n) => {
+            let arr = [];
+            for (let i = 0; i < n; i++) {
+                arr.push(i);
+            }
+            return arr;
+        },
+        countUPandDown: (n) => {
+            for (let i = 0; i < n; i++) {
+                console.log(i);
+            }
+            for (let j = n - 1; j >= 0; j--) {
+                console.log(j);
+            }
+        },
+        printAllPairs: (n) => {
+            for (let i = 0; i < n; i++) {
+                for (let j = 0; j < n; j++) {
+                    console.log(i, j);
+                }
+            }
+        },
+        numberOfHalves: (n) => {
+            let count = 0;
+            while (n > 1) {
+                n /= 2;
+                count++;
+            }
+            return count;
+        },
+        totalNumberOfHalves: (n) => {
+            let total = 0;
+            for (let i = n; i > 0; i--) {
+                total += functions.numberOfHalves(i);
+            }
+            return total;
+        },
+        LogAllBinaries: (n) => {
+            for (let i = 0; i < n; i++) {
+                console.log(i.toString(2));
+            }
+        }
+    };
+
+    let chart;
+
+    functionSelect.addEventListener('change', updateFunctionCode);
+    plotButton.addEventListener('click', plotExecution);
+
+    function updateFunctionCode() {
+        const selectedFunction = functionSelect.value;
+        functionCode.textContent = functions[selectedFunction].toString();
+        hljs.highlightElement(functionCode);
+    }
+
+    function plotExecution() {
+        const selectedFunction = functionSelect.value;
+        const n = parseInt(nValueInput.value);
+
+        if (isNaN(n) || n <= 0) {
+            alert('Please enter a valid positive number for n');
+            return;
+        }
+
+        const startTime = performance.now();
+        functions[selectedFunction](n);
+        const endTime = performance.now();
+        const executionTime = endTime - startTime;
+
+        updateChart(n, executionTime);
+    }
+
+    function updateChart(n, executionTime) {
+        if (chart) {
+            chart.destroy();
+        }
+
+        const nValues = Array.from({length: n}, (_, i) => i + 1);
+        const executionTimes = nValues.map(value => {
+            const start = performance.now();
+            functions[functionSelect.value](value);
+            const end = performance.now();
+            return end - start;
+        });
+
+        chart = new Chart(executionChart, {
+            type: 'line',
+            data: {
+                labels: nValues,
+                datasets: [{
+                    label: 'Execution Time (ms)',
+                    data: executionTimes,
+                    borderColor: 'rgb(75, 192, 192)',
+                    tension: 0.1
+                }]
+            },
+            options: {
+                responsive: true,
+                animation: {
+                    duration: 1000,
+                    easing: 'easeInOutQuart'
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    }
+
+    updateFunctionCode();
+</script>
+
+<style>
+    #performanceTracker {
+        margin-top: 20px;
+        padding: 20px;
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    #resultContainer {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 20px;
+        gap: 20px;
+    }
+    #codeSection, #chartSection {
+        flex: 1;
+        min-width: 300px;
+        padding: 15px;
+        background-color: rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
+    }
+    #codeSection {
+        overflow-x: auto;
+    }
+    #chartSection {
+        height: 300px;
+    }
+    .input-group {
+        margin-bottom: 15px;
+    }
+    label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+    }
+    select, input, button {
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        border-radius: 5px;
+        background-color: rgba(255, 255, 255, 0.1);
+        color: #fff;
+    }
+    button {
+        cursor: pointer;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        transition: background-color 0.3s;
+    }
+    button:hover {
+        background-color: #45a049;
+    }
+    pre {
+        background-color: rgba(0, 0, 0, 0.2);
+        padding: 10px;
+        border-radius: 5px;
+        overflow-x: auto;
+    }
+    code {
+        font-family: 'Courier New', Courier, monospace;
+    }
+</style>
+</body>
+</body>
+</html>
